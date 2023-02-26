@@ -1,4 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
+using Maui.FreakyEffects;
+using Microsoft.Maui.Hosting;
 
 namespace Samples;
 
@@ -13,10 +15,14 @@ public static class MauiProgram
 			{
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
+			})
+			.ConfigureEffects(effects=> {
+				effects.InitFreakyEffects();
 			});
+        builder.InitSkiaSharp();
 
 #if DEBUG
-		builder.Logging.AddDebug();
+        builder.Logging.AddDebug();
 #endif
 
 		return builder.Build();
