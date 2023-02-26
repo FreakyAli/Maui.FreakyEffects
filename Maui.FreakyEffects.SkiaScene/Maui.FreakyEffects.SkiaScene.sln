@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 25.0.1705.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maui.FreakyEffects.SkiaScene", "Maui.FreakyEffects.SkiaScene\Maui.FreakyEffects.SkiaScene.csproj", "{CFB2FE0E-97FA-4F3B-9E9E-A9F0FAA85BE8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Samples", "Samples\Samples.csproj", "{EA96218C-C012-4378-B3B1-9C0A99474A4F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CFB2FE0E-97FA-4F3B-9E9E-A9F0FAA85BE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFB2FE0E-97FA-4F3B-9E9E-A9F0FAA85BE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFB2FE0E-97FA-4F3B-9E9E-A9F0FAA85BE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFB2FE0E-97FA-4F3B-9E9E-A9F0FAA85BE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA96218C-C012-4378-B3B1-9C0A99474A4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA96218C-C012-4378-B3B1-9C0A99474A4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA96218C-C012-4378-B3B1-9C0A99474A4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA96218C-C012-4378-B3B1-9C0A99474A4F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0127A9E3-74AE-466C-B6C5-A9B90E2101D0}
+	EndGlobalSection
+EndGlobal
