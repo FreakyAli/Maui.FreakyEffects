@@ -16,9 +16,6 @@
 	<ItemGroup>
 	  <None Remove="Platforms\Android\" />
 	  <None Remove="Platforms\iOS\" />
-	  <None Remove="Platforms\MacCatalyst\" />
-	  <None Remove="Platforms\Tizen\" />
-	  <None Remove="Platforms\Windows\" />
 	  <None Remove="Shared\" />
 	  <None Remove="Shared\TouchTracking\" />
 	  <None Remove="Shared\SkiaScene\" />
@@ -28,9 +25,6 @@
 	<ItemGroup>
 	  <Folder Include="Platforms\Android\" />
 	  <Folder Include="Platforms\iOS\" />
-	  <Folder Include="Platforms\MacCatalyst\" />
-	  <Folder Include="Platforms\Tizen\" />
-	  <Folder Include="Platforms\Windows\" />
 	  <Folder Include="Shared\" />
 	  <Folder Include="Shared\TouchTracking\" />
 	  <Folder Include="Shared\SkiaScene\" />
