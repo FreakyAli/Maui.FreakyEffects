@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 25.0.1705.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maui.FreakyEffects.SkiaScene", "Maui.FreakyEffects.SkiaScene\Maui.FreakyEffects.SkiaScene.csproj", "{CFB2FE0E-97FA-4F3B-9E9E-A9F0FAA85BE8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maui.FreakyEffects", "Maui.FreakyEffects.SkiaScene\Maui.FreakyEffects.csproj", "{CFB2FE0E-97FA-4F3B-9E9E-A9F0FAA85BE8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Samples", "Samples\Samples.csproj", "{EA96218C-C012-4378-B3B1-9C0A99474A4F}"
 EndProject
