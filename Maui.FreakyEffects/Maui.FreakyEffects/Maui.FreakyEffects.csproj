@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
 		<TargetFrameworks>net7.0-android;net7.0-ios</TargetFrameworks>
@@ -15,11 +15,13 @@
 		<None Remove="Platforms\Android\" />
 		<None Remove="Platforms\iOS\" />
 		<None Remove="Shared\" />
+		<None Remove="Shared\Skeleton\" />
 	</ItemGroup>
 	<ItemGroup>
 		<Folder Include="Platforms\Android\" />
 		<Folder Include="Platforms\iOS\" />
 		<Folder Include="Shared\" />
+		<Folder Include="Shared\Skeleton\" />
 	</ItemGroup>
 	<ItemGroup>
 		<PackageReference Include="SkiaSharp.Views.Maui.Controls" Version="2.88.3" />
