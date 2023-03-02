@@ -21,14 +21,14 @@ public abstract class BaseAnimation : IAnimation
 
     private async Task<bool> Run(BindableObject bindable)
     {
-        if (Skeleton.GetCancelAnimation(bindable))
+        if (SkeletonEffect.GetCancelAnimation(bindable))
         {
-            Skeleton.SetAnimating(bindable, false);
+            SkeletonEffect.SetAnimating(bindable, false);
             return false;
         }
         else
         {
-            Skeleton.SetAnimating(bindable, true);
+            SkeletonEffect.SetAnimating(bindable, true);
             await Animate(bindable);
             return await Run(bindable);
         }

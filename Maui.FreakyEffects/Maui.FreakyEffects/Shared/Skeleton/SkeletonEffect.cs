@@ -3,7 +3,7 @@ using Maui.FreakyEffects.Skeleton;
 
 namespace Maui.FreakyEffects.Skeleton;
 
-public static class Skeleton
+public static class SkeletonEffect
 {
     #region Public Properties
 
