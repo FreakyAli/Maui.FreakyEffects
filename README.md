@@ -1,112 +1,36 @@
-# Maui.FreakyEffects.SkiaScene
+# Maui.FreakyEffects
 
-Collection of lightweight libraries which can be used to simplify manuplation with SkiaSharp graphic objects. 
+Maui.FreakyEffects is a collection of visually stunning and unique effects for Maui, it contains a variety of effects that you can use to add some creativity to your Maui applications.
 
-Supported platforms are .NET Standard 1.3, UWP, Xamarin.iOS, Xamarin.Android.
+The code for each effect is well-documented and easy to understand, making it accessible for both experienced Maui developers and those just starting out.
 
-## Libraries
+If you're looking to add some unique visual effects to your Maui applications be sure to check us out!
 
-### SkiaScene
-```
-Install-Package SkiaScene
-```
-Implemented as .NET Standard 1.3 library.
+## Platforms
 
-Basic class which allows controlling `SKCanvas` transformations without the need to directly manipulate underlaying Matrix.
-First you need to implement `Render` method of `ISKSceneRenderer` interface, where you define all your drawing logic on `SKCanvas`.
-Then create the `SKScene` instance:
-
-```csharp
-//Create scene
-ISKSceneRenderer myRenderer = new MyRenderer(); //user defined instance 
-scene = new SKScene(myRenderer);
-
-//In your paint method
-scene.Render(canvas); //Pass canvas from SKPaintSurfaceEventArgs
-
-//Scene manipulation
-scene.MoveByVector(new SKPoint(10, 0)); //Move by 10 units to the right independently from current rotation and zoom
-scene.ZoomByScaleFactor(scene.GetCenter(), 1.2f); //Zoom to the center
-scene.RotateByRadiansDelta(scene.GetCenter(), 0.1f); //Rotate around center
-canvasView.InvalidateSurface(); //Force to repaint
-```
-
-### TouchTracking
-```
-Install-Package TouchTracking
-```
-Implemented as .NET Standard 1.3 and platform specific libraries.
-
-TouchTracking provides unified API for multi-touch gestures on Android, iOS and UWP. It can be used without Xamarin.Forms. 
-Basic principles are described in Xamarin Documentation https://developer.xamarin.com/guides/xamarin-forms/application-fundamentals/effects/touch-tracking/
-
-Usage is similar on each platform. 
-
-Android example:
-
-```csharp
-//Initialization
-canvasView = FindViewById<SKCanvasView>(Resource.Id.canvasView); //Get SKCanvasView
-touchHandler = new TouchHandler() { UseTouchSlop = true };
-touchHandler.RegisterEvents(canvasView); //Pass View to the touch handler
-touchHandler.TouchAction += OnTouch; //Listen to the touch gestures
-
-void OnTouch(object sender, TouchActionEventArgs args) {
-    var point = args.Location; //Point location
-    var type = args.Type; //Entered, Pressed, Moved ... etc.
-    //... do something
-}
-```
-
-### TouchTracking.Forms
-```
-Install-Package TouchTracking.Forms
-```
-Implemented as .NET Standard 1.3 and platform specific libraries.
-
-Same functionality as TouchTracking library but can be consumed in Xamarin.Forms as an Effect called TouchEffect.
-
-```
-xmlns:tt="clr-namespace:TouchTracking.Forms;assembly=TouchTracking.Forms"
-
-<Grid>
-    <views:SKCanvasView x:Name="canvasView" />
-    <Grid.Effects>
-        <tt:TouchEffect Capture="True" TouchAction="OnTouch" />
-    </Grid.Effects>
-</Grid>
-```
+| Support       | OS            |
+| ------------- |:-------------:|
+| iOS             | iOS 11.0 + |
+| Android    | API 23+ (Marshmallow) | 
 
 
+## Documentation
+ 
+For more details and API documentation check our [Wiki](https://github.com/FreakyAli/MAUI.FreakyControls/wiki)
 
-**Important:** Right now, there is an issue on iOS in Xamarin.Forms, where routing effect resolution fails silently. To fix it, you must include this line in your AppDelegate FinishedLaunching:
+### Like what you saw? Want to keep this repo alive?
+[![](https://miro.medium.com/max/600/0*wrBJU05A3BULKcWA.gif)](https://www.buymeacoffee.com/FreakyAli)
 
-```csharp
-var _ = new TouchTracking.Forms.iOS.TouchEffect();
-```
+## License 
 
-On UWP there is a similar problem in the Release mode where you need to provide explicit Assembly parameter to your Xamarin.Forms.Init method in App.Xaml.cs inside UWP project:
+The license for this project can be found [here](https://github.com/FreakyAli/Maui.FreakyEffects/blob/master/LICENSE)
 
-```csharp
-Xamarin.Forms.Forms.Init(e, new[] { typeof(TouchTracking.Forms.UWP.TouchEffect).Assembly });
-```
+## Activity 
 
-### SkiaScene.TouchManipulations
-```
-Install-Package SkiaScene.TouchManipulations
-```
-Implemented as .NET Standard 1.3 library.
+Sparkline: 
 
-Combines SkiaScene and TouchTracking libraries to detect and respond to the tap, pinch and pan gestures. Most of the functionality is described in Xamarin Documentation https://developer.xamarin.com/guides/xamarin-forms/advanced/skiasharp/transforms/touch/
+[![Sparkline](https://stars.medv.io/FreakyAli/Maui.FreakyEffects.svg)](https://stars.medv.io/FreakyAli/Maui.FreakyEffects)
 
-`TouchGestureRecognizer` recieves touch event info in 'ProcessTouchEvent' method and fires concrete gesture event.
+RepoBeats:
 
-`SceneGestureResponder` subscribes to the events of `TouchGestureRecognizer` and executes correct actions in underlying `SKScene`.
-
-`SceneGestureRenderingResponder` inherits from `SceneGestureResponder` and additionally controls frequency of calling `InvalidateSurface` method through `MaxFramesPerSecond` property.
-1.
-To determine with precision; to mark out with distinctness; to ascertain or exhibit clearly.
-2.
-To express the essential nature of something.
-3.
-To state the meaning of a word, phrase, sign, or symbol.
+![RepoBeats](https://repobeats.axiom.co/api/embed/d14386d457d5790da527b4b00dfddcd8dad8e2dc.svg "Repobeats analytics image")
