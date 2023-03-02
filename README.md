@@ -1,10 +1,10 @@
 # Maui.FreakyEffects
 
 <div>
-   <a href="https://www.nuget.org/packages/FreakyControls"><img src="https://img.shields.io/nuget/v/FreakyControls?color=blue&logo=nuget"></a>
-   <a href="https://www.nuget.org/packages/FreakyControls"><img src="https://img.shields.io/nuget/dt/FreakyControls.svg"></a>
-   <a href="./LICENSE"><img src="https://img.shields.io/github/license/freakyali/maui.freakycontrols"></a>
-   <a href="https://www.codefactor.io/repository/github/freakyali/maui.freakycontrols"><img src="https://www.codefactor.io/repository/github/freakyali/maui.freakycontrols/badge"></a>
+   <a href="https://www.nuget.org/packages/FreakyEffects"><img src="https://img.shields.io/nuget/v/FreakyEffects?color=blue&logo=nuget"></a>
+   <a href="https://www.nuget.org/packages/FreakyEffects"><img src="https://img.shields.io/nuget/dt/FreakyEffects.svg"></a>
+   <a href="./LICENSE"><img src="https://img.shields.io/github/license/freakyali/maui.freakyeffects"></a>
+   <a href="https://www.codefactor.io/repository/github/freakyali/maui.freakyeffects"><img src="https://www.codefactor.io/repository/github/freakyali/maui.freakyeffects/badge"></a>
 </div>
 
 Maui.FreakyEffects is a collection of lightweight, visually stunning and unique effects for Maui, it contains a variety of effects that you can use to add some creativity to your Maui applications.
