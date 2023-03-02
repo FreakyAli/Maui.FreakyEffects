@@ -7,6 +7,7 @@
    <a href="https://www.codefactor.io/repository/github/freakyali/maui.freakyeffects"><img src="https://www.codefactor.io/repository/github/freakyali/maui.freakyeffects/badge"></a>
 </div>
 
+
 Maui.FreakyEffects is a collection of lightweight, visually stunning and unique effects for Maui, it contains a variety of effects that you can use to add some creativity to your Maui applications.
 
 The code for each effect is well-documented and easy to understand, making it accessible for both experienced Maui developers and those just starting out.
