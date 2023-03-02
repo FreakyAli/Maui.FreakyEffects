@@ -13,10 +13,13 @@ If you're looking to add some unique visual effects to your Maui applications be
 | iOS             | iOS 11.0 + |
 | Android    | API 23+ (Marshmallow) | 
 
+## Installation
+
+Checkout the installation page on our [Wiki](https://github.com/FreakyAli/Maui.FreakyEffects/wiki) for more information.
 
 ## Documentation
  
-For more details and API documentation check our [Wiki](https://github.com/FreakyAli/MAUI.FreakyControls/wiki)
+For more details and API documentation check our [Installation Wiki](https://github.com/FreakyAli/Maui.FreakyEffects/wiki/Installation)
 
 ### Like what you saw? Want to keep this repo alive?
 [![](https://miro.medium.com/max/600/0*wrBJU05A3BULKcWA.gif)](https://www.buymeacoffee.com/FreakyAli)
