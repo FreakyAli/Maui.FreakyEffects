@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Samples.SkeletonEffect.SkeletonEffectView"
+             xmlns:vm="clr-namespace:Samples.SkeletonEffect"
+             x:DataType="vm:SkeletonEffectViewModel"
+             Title="SkeletonEffectView">
+    <ContentPage.Resources>
+        <Style TargetType="Label">
+            <Setter Property="FontFamily" Value="Segoe UI" />
+            <Setter Property="LineBreakMode" Value="WordWrap" />
+        </Style>
+    </ContentPage.Resources>
+        <CollectionView x:Name="ImageCollectionView" ItemsSource="{Binding ImageItems}" Margin="5">
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout Orientation="Vertical"
+                                 Span="2"
+                                 VerticalItemSpacing="5"
+                                 HorizontalItemSpacing="5" />
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="vm:ImageItem">
+                    <Grid Padding="5" Margin="5" BackgroundColor="#F5F5F5">
+                        <Image Source="{Binding ImageUrl}" Aspect="AspectFill"/>
+                        <StackLayout VerticalOptions="EndAndExpand" Padding="5" BackgroundColor="#80000000">
+                            <Label Text="{Binding Title}" TextColor="White"
+                                FontAttributes="Bold" FontSize="16" />
+                            <Label Text="{Binding Description}" TextColor="White"
+                                FontSize="14" />
+                        </StackLayout>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+</ContentPage>

@@ -4,7 +4,18 @@
              xmlns:tt="clr-namespace:Maui.FreakyEffects.TouchTracking;assembly=Maui.FreakyEffects"
              xmlns:views="clr-namespace:SkiaSharp.Views.Maui.Controls;assembly=SkiaSharp.Views.Maui.Controls"
              x:Class="Samples.MainPage">
-    <Grid>
+     <ListView ItemsSource="{Binding Items}"
+              ItemTapped="ListView_ItemTapped"
+              SeparatorVisibility="None"
+              SelectionMode="None"
+              CachingStrategy="RecycleElementAndDataTemplate" >
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <TextCell TextColor="Black"  Text="{Binding .}"  />
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+    <!--<Grid>
         <views:SKCanvasView
         x:Name="canvasView"
         PaintSurface="OnPaint" 
@@ -16,5 +27,5 @@
                 Capture="True"
                 TouchAction="OnTouchEffectAction" />
         </Grid.Effects>
-    </Grid>
+    </Grid>-->
 </ContentPage>

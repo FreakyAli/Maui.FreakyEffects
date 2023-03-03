@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using Maui.FreakyEffects.Skeleton;
 
 namespace Maui.FreakyEffects.Skeleton;
@@ -43,8 +44,10 @@ public static class SkeletonEffect
 
     internal static readonly BindableProperty AnimatingProperty = BindableProperty.CreateAttached("Animating", typeof(bool), typeof(View), default(bool));
 
+    [TypeConverter(typeof(BaseAnimationTypeConverter))]
     internal static void SetAnimating(BindableObject b, bool value) => b.SetValue(AnimatingProperty, value);
 
+    [TypeConverter(typeof(BaseAnimationTypeConverter))]
     internal static bool GetAnimating(BindableObject b) => (bool)b.GetValue(AnimatingProperty);
 
     internal static readonly BindableProperty CancelAnimationProperty = BindableProperty.CreateAttached("CancelAnimation", typeof(bool), typeof(View), default(bool));
