@@ -3,20 +3,51 @@ using System.Collections.ObjectModel;
 
 namespace Samples.SkeletonEffect;
 
-public class ImageItem
+public class SkeletonEffectViewModel : FreakyBaseViewModel
 {
-    public string Title { get; set; }
-    public string Description { get; set; }
-    public string ImageUrl { get; set; }
-}
+    private bool isBusy;
+    const string title = "";
 
-public class SkeletonEffectViewModel
-{
-    public ObservableCollection<ImageItem> ImageItems { get; set; }
-
-    public SkeletonEffectViewModel()
+    public bool IsBusy
     {
-        ImageItems = new ObservableCollection<ImageItem>
+        get => isBusy;
+        set => SetProperty(ref isBusy, value);
+    }
+
+    public ObservableCollection<ImageItem> ImageItems
+    {
+        get => imageItems;
+        set => SetProperty(ref imageItems, value);
+    }
+
+    private ObservableCollection<ImageItem> previewItems = new ObservableCollection<ImageItem> {
+         new ImageItem
+            {
+             Title= title,
+             Description=title,
+             ImageUrl= string.Empty
+            },
+            new ImageItem
+            {
+             Title= title,
+             Description=title,
+             ImageUrl= string.Empty
+            },
+            new ImageItem
+            {
+             Title= title,
+             Description=title,
+             ImageUrl= string.Empty
+            },
+            new ImageItem
+            {
+             Title= title,
+             Description=title,
+             ImageUrl= string.Empty
+            }
+    };
+
+    private ObservableCollection<ImageItem> loadItems = new ObservableCollection<ImageItem>
         {
             new ImageItem
             {
@@ -79,6 +110,22 @@ public class SkeletonEffectViewModel
                 ImageUrl = "https://picsum.photos/209/300.jpg"
             }
         };
+    private ObservableCollection<ImageItem> imageItems;
+
+    public SkeletonEffectViewModel()
+    {
+
+    }
+
+    internal void SetPreviewItems()
+    {
+        MainThread.BeginInvokeOnMainThread(() =>
+        ImageItems = previewItems);
+    }
+
+    internal void LoadItems()
+    {
+        MainThread.BeginInvokeOnMainThread(() =>
+        ImageItems = loadItems);
     }
 }
-

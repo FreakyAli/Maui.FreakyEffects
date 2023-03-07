@@ -5,7 +5,7 @@ using System.Windows.Input;
 
 namespace Samples;
 
-public class MainViewModel : BaseViewModel
+public class MainViewModel : FreakyBaseViewModel
 {
     public ICommand ImageWasTappedCommand
     {

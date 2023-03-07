@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Samples.FreakyBaseContentPage"
+             xmlns:controls="clr-namespace:Maui.FreakyControls;assembly=Maui.FreakyControls"
+             x:Name="this"
+             Title="FreakyBaseContentPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ControlTemplate x:Key="HeaderControlTemplate">
+                <AbsoluteLayout>
+                    <Grid
+                        Margin="8,0,8,8"
+                        AbsoluteLayout.LayoutBounds="1,1,1,1"
+                        AbsoluteLayout.LayoutFlags="All"
+                        BackgroundColor="{DynamicResource WhiteColor}"
+                        RowSpacing="0"
+                        VerticalOptions="FillAndExpand">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="25*" />
+                            <ColumnDefinition Width="50*" />
+                            <ColumnDefinition Width="25*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="7*" />
+                            <RowDefinition Height="93*" />
+                        </Grid.RowDefinitions>
+                        <StackLayout
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            Orientation="Horizontal">
+                            <Frame
+                                Margin="5,0,-10,0"
+                                Padding="0"
+                                HasShadow="False"
+                                HeightRequest="30"
+                                HorizontalOptions="Start"
+                                IsVisible="{TemplateBinding Parent.IsBackButtonVisible}"
+                                VerticalOptions="Center"
+                                WidthRequest="25">
+                                <controls:FreakySvgImageView
+                                    InputTransparent="True"
+                                    SvgMode="AspectFit" />
+                                 <!--ResourceId="{Static constants:SvgConstants.BackIcon}"-->
+                            </Frame>
+                            <Frame
+                                Margin="15,0,7,0"
+                                Padding="0,2,0,2"
+                                HasShadow="False"
+                                HeightRequest="30"
+                                HorizontalOptions="Fill"
+                                IsVisible="True"
+                                WidthRequest="25">
+                                <controls:FreakySvgImageView
+                                    InputTransparent="True"
+                                    SvgMode="AspectFit" />
+                                <!--<Frame.Behaviors>
+                                    <behavior:ViewTappedBehavior AnimationType="Fade" Command="{Binding HamburgerTappedCommand, Source={x:Reference this}}" />
+                                </Frame.Behaviors>-->
+                                <!--ResourceId="{Static constants:SvgConstants.NavigationIcon}"-->
+                            </Frame>
+                        </StackLayout>
+                        <Label
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            Margin="0,0,0,0"
+                            HorizontalOptions="CenterAndExpand"
+                            Style="{DynamicResource HeaderLabelStyle}"
+                            Text="{TemplateBinding Parent.HeaderText}"
+                            VerticalOptions="Center" />
+                        <controls:FreakySvgImageView
+                            Grid.Row="0"
+                            Grid.Column="2"
+                            HeightRequest="27"
+                            HorizontalOptions="EndAndExpand"
+                            IsVisible="{TemplateBinding Parent.IsContextVisible}"
+                            ResourceId="{Static constants:SvgConstants.MenuIcon}"
+                            VerticalOptions="Center"
+                            WidthRequest="27">
+                        </controls:FreakySvgImageView>
+                        <Frame
+                            Grid.Row="0"
+                            Grid.Column="2"
+                            Margin="0,0,7,0"
+                            Padding="0,3,0,3"
+                            HasShadow="False"
+                            HeightRequest="35"
+                            HorizontalOptions="EndAndExpand"
+                            IsVisible="{TemplateBinding Parent.HasAddButton}"
+                            VerticalOptions="Center">
+                            <controls:FreakySvgImageView
+                                ImageColor="{DynamicResource PrimaryColor}"
+                                InputTransparent="True"
+                                ResourceId="{Static constants:SvgConstants.PlusIcon}" />
+                        </Frame>
+                        <ContentPresenter
+                            Grid.Row="1"
+                            Grid.ColumnSpan="3"
+                            Margin="7,17,7,0"
+                            VerticalOptions="FillAndExpand" />
+                    </Grid>
+                    <BoxView
+                        AbsoluteLayout.LayoutBounds="1,1,1,1"
+                        AbsoluteLayout.LayoutFlags="All"
+                        BackgroundColor="Transparent"
+                        IsVisible="{Binding Source={x:Static local:App.Instance}, Path=ShouldBlockUI}" />
+                </AbsoluteLayout>
+            </ControlTemplate>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+</ContentPage>
