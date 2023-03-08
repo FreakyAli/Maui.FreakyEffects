@@ -3,7 +3,7 @@ using Timer = System.Timers.Timer;
 
 namespace Samples.SkeletonEffect;
 
-public partial class SkeletonEffectView : ContentPage
+public partial class SkeletonEffectView : FreakyBaseContentPage
 {
     public Timer timer;
     private SkeletonEffectViewModel viewModel;

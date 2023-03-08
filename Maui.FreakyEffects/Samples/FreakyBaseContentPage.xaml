@@ -2,20 +2,20 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Samples.FreakyBaseContentPage"
+             BackgroundColor="{StaticResource Primary}"
+             xmlns:constants="clr-namespace:Samples"
              xmlns:controls="clr-namespace:Maui.FreakyControls;assembly=Maui.FreakyControls"
-             x:Name="this"
-             Title="FreakyBaseContentPage">
+             x:Name="this">
     <ContentPage.Resources>
         <ResourceDictionary>
             <ControlTemplate x:Key="HeaderControlTemplate">
                 <AbsoluteLayout>
                     <Grid
-                        Margin="8,0,8,8"
-                        AbsoluteLayout.LayoutBounds="1,1,1,1"
+                        BackgroundColor="{TemplateBinding Parent.NavBarBackgroundColor}"
+                        AbsoluteLayout.LayoutBounds="0,0,1,1"
                         AbsoluteLayout.LayoutFlags="All"
-                        BackgroundColor="{DynamicResource WhiteColor}"
                         RowSpacing="0"
-                        VerticalOptions="FillAndExpand">
+                        ColumnSpacing="0">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="25*" />
                             <ColumnDefinition Width="50*" />
@@ -25,85 +25,63 @@
                             <RowDefinition Height="7*" />
                             <RowDefinition Height="93*" />
                         </Grid.RowDefinitions>
-                        <StackLayout
+                        <Border
                             Grid.Row="0"
                             Grid.Column="0"
-                            Orientation="Horizontal">
-                            <Frame
-                                Margin="5,0,-10,0"
-                                Padding="0"
-                                HasShadow="False"
-                                HeightRequest="30"
-                                HorizontalOptions="Start"
-                                IsVisible="{TemplateBinding Parent.IsBackButtonVisible}"
-                                VerticalOptions="Center"
-                                WidthRequest="25">
-                                <controls:FreakySvgImageView
-                                    InputTransparent="True"
-                                    SvgMode="AspectFit" />
-                                 <!--ResourceId="{Static constants:SvgConstants.BackIcon}"-->
-                            </Frame>
-                            <Frame
-                                Margin="15,0,7,0"
-                                Padding="0,2,0,2"
-                                HasShadow="False"
-                                HeightRequest="30"
-                                HorizontalOptions="Fill"
-                                IsVisible="True"
-                                WidthRequest="25">
-                                <controls:FreakySvgImageView
-                                    InputTransparent="True"
-                                    SvgMode="AspectFit" />
-                                <!--<Frame.Behaviors>
-                                    <behavior:ViewTappedBehavior AnimationType="Fade" Command="{Binding HamburgerTappedCommand, Source={x:Reference this}}" />
-                                </Frame.Behaviors>-->
-                                <!--ResourceId="{Static constants:SvgConstants.NavigationIcon}"-->
-                            </Frame>
-                        </StackLayout>
+                            Margin="15,0,0,0"
+                            StrokeThickness="0"
+                            BackgroundColor="{StaticResource Tertiary}"
+                            VerticalOptions="Center"
+                            HorizontalOptions="Start"
+                            HeightRequest="30"
+                            WidthRequest="30">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="5" />
+                            </Border.StrokeShape>
+                            <controls:FreakySvgImageView
+                            IsVisible="{TemplateBinding Parent.IsBackButtonVisible}"
+                            ResourceId="{x:Static constants:Constants.BackButton}"
+                            SvgAssembly="{x:Static constants:Constants.SvgAssembly}"
+                            ImageColor="Black"
+                            SvgMode="AspectFit" />
+                        </Border>
                         <Label
                             Grid.Row="0"
                             Grid.Column="1"
                             Margin="0,0,0,0"
+                            FontSize="Medium"
+                            TextColor="{TemplateBinding Parent.HeaderTextColor}"
                             HorizontalOptions="CenterAndExpand"
                             Style="{DynamicResource HeaderLabelStyle}"
                             Text="{TemplateBinding Parent.HeaderText}"
                             VerticalOptions="Center" />
-                        <controls:FreakySvgImageView
+                        <Border
                             Grid.Row="0"
                             Grid.Column="2"
-                            HeightRequest="27"
-                            HorizontalOptions="EndAndExpand"
-                            IsVisible="{TemplateBinding Parent.IsContextVisible}"
-                            ResourceId="{Static constants:SvgConstants.MenuIcon}"
+                            Margin="0,0,15,0"
+                            StrokeThickness="0"
+                            BackgroundColor="#2E2D2B"
                             VerticalOptions="Center"
-                            WidthRequest="27">
-                        </controls:FreakySvgImageView>
-                        <Frame
-                            Grid.Row="0"
-                            Grid.Column="2"
-                            Margin="0,0,7,0"
-                            Padding="0,3,0,3"
-                            HasShadow="False"
-                            HeightRequest="35"
-                            HorizontalOptions="EndAndExpand"
-                            IsVisible="{TemplateBinding Parent.HasAddButton}"
-                            VerticalOptions="Center">
+                            HorizontalOptions="End"
+                            HeightRequest="30"
+                            WidthRequest="30">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="5" />
+                            </Border.StrokeShape>
                             <controls:FreakySvgImageView
-                                ImageColor="{DynamicResource PrimaryColor}"
-                                InputTransparent="True"
-                                ResourceId="{Static constants:SvgConstants.PlusIcon}" />
-                        </Frame>
+                            ImageColor="Black"
+                            ResourceId="{x:Static constants:Constants.MeatballMenu}"
+                            SvgAssembly="{x:Static constants:Constants.SvgAssembly}"
+                            SvgMode="AspectFit">
+                            </controls:FreakySvgImageView>
+                        </Border>
                         <ContentPresenter
                             Grid.Row="1"
+                            IsClippedToBounds="True"
+                            BackgroundColor="{StaticResource Primary}"
                             Grid.ColumnSpan="3"
-                            Margin="7,17,7,0"
                             VerticalOptions="FillAndExpand" />
                     </Grid>
-                    <BoxView
-                        AbsoluteLayout.LayoutBounds="1,1,1,1"
-                        AbsoluteLayout.LayoutFlags="All"
-                        BackgroundColor="Transparent"
-                        IsVisible="{Binding Source={x:Static local:App.Instance}, Path=ShouldBlockUI}" />
                 </AbsoluteLayout>
             </ControlTemplate>
         </ResourceDictionary>

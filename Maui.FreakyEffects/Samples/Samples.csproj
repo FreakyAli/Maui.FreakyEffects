@@ -28,6 +28,10 @@
 	  <CreatePackage>false</CreatePackage>
 	</PropertyGroup>
 	<ItemGroup>
+	  <MauiImage Remove="Resources\Images\meatball_icon.svg" />
+	  <MauiImage Remove="Resources\Images\back_button.svg" />
+	</ItemGroup>
+	<ItemGroup>
 		<!-- App Icon -->
 		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
 
@@ -58,5 +62,9 @@
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="SkeletonEffect\" />
+	</ItemGroup>
+	<ItemGroup>
+	  <EmbeddedResource Include="Resources\Images\meatball_icon.svg" />
+	  <EmbeddedResource Include="Resources\Images\back_button.svg" />
 	</ItemGroup>
 </Project>
