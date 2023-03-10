@@ -11,7 +11,6 @@ public partial class SkeletonEffectView : FreakyBaseContentPage
     public SkeletonEffectView()
     {
         InitializeComponent();
-        Shell.SetNavBarIsVisible(this, false);
         BindingContext = viewModel = new SkeletonEffectViewModel();
         viewModel.SetPreviewItems();
         viewModel.IsBusy = true;

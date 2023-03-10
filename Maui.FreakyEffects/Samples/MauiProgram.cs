@@ -2,6 +2,7 @@
 using Maui.FreakyEffects;
 using Microsoft.Maui.Hosting;
 using Maui.FreakyControls.Extensions;
+using CommunityToolkit.Maui;
 
 namespace Samples;
 
@@ -12,6 +13,7 @@ public static class MauiProgram
         var builder = MauiApp.CreateBuilder();
         builder
             .UseMauiApp<App>()
+            .UseMauiCommunityToolkit()
             .ConfigureFonts(fonts =>
             {
                 fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");

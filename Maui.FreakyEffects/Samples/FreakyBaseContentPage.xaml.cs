@@ -1,10 +1,19 @@
-﻿namespace Samples;
+﻿using System.Windows.Input;
+
+namespace Samples;
 
 public partial class FreakyBaseContentPage : ContentPage
 {
     public FreakyBaseContentPage()
     {
         InitializeComponent();
+        Shell.SetNavBarIsVisible(this, false);
+    }
+
+    public ICommand BackButtonCommand
+    {
+        get => (ICommand)GetValue(BackButtonCommandProperty);
+        set => SetValue(BackButtonCommandProperty, value);
     }
 
     public Color NavBarBackgroundColor
@@ -37,11 +46,13 @@ public partial class FreakyBaseContentPage : ContentPage
         set => SetValue(IsBackButtonVisibleProperty, value);
     }
 
-    public bool HasAddButton
-    {
-        get => (bool)GetValue(HasAddButtonProperty);
-        set => SetValue(HasAddButtonProperty, value);
-    }
+    public static readonly BindableProperty BackButtonCommandProperty = BindableProperty.Create
+        (
+        propertyName: nameof(BackButtonCommand),
+        returnType: typeof(ICommand),
+        declaringType: typeof(FreakyBaseContentPage),
+        defaultValue: null
+        );
 
     public static readonly BindableProperty NavBarBackgroundColorProperty = BindableProperty.Create
          (
@@ -72,7 +83,7 @@ public partial class FreakyBaseContentPage : ContentPage
         propertyName: nameof(IsContextVisible),
         returnType: typeof(bool),
         declaringType: typeof(FreakyBaseContentPage),
-        defaultValue: false
+        defaultValue: true
         );
 
     public static readonly BindableProperty IsBackButtonVisibleProperty = BindableProperty.Create
@@ -82,12 +93,4 @@ public partial class FreakyBaseContentPage : ContentPage
         declaringType: typeof(FreakyBaseContentPage),
         defaultValue: true
         );
-
-    public static readonly BindableProperty HasAddButtonProperty = BindableProperty.Create
-       (
-       propertyName: nameof(HasAddButton),
-       returnType: typeof(bool),
-       declaringType: typeof(FreakyBaseContentPage),
-       defaultValue: false
-       );
 }

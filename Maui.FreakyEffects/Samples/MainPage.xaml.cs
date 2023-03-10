@@ -6,7 +6,7 @@ using SkiaSharp.Views.Maui;
 
 namespace Samples;
 
-public partial class MainPage : ContentPage
+public partial class MainPage : FreakyBaseContentPage
 {
     //private ISKScene _scene;
     //private ITouchGestureRecognizer _touchGestureRecognizer;

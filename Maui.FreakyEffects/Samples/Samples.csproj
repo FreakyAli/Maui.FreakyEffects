@@ -30,6 +30,8 @@
 	<ItemGroup>
 	  <MauiImage Remove="Resources\Images\meatball_icon.svg" />
 	  <MauiImage Remove="Resources\Images\back_button.svg" />
+	  <MauiImage Remove="Resources\Images\play.svg" />
+	  <MauiImage Remove="Resources\Images\bar_chart.svg" />
 	</ItemGroup>
 	<ItemGroup>
 		<!-- App Icon -->
@@ -52,6 +54,7 @@
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
 		<PackageReference Include="FreakyControls" Version="0.4.3-pre" />
+		<PackageReference Include="CommunityToolkit.Maui" Version="5.0.0" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -66,5 +69,7 @@
 	<ItemGroup>
 	  <EmbeddedResource Include="Resources\Images\meatball_icon.svg" />
 	  <EmbeddedResource Include="Resources\Images\back_button.svg" />
+	  <EmbeddedResource Include="Resources\Images\play.svg" />
+	  <EmbeddedResource Include="Resources\Images\bar_chart.svg" />
 	</ItemGroup>
 </Project>

@@ -47,6 +47,26 @@
         </Setter>
     </Style>
 
+    <Style TargetType="Button" ApplyToDerivedTypes="True" x:Key="PrimaryButtonStyle">
+        <Setter Property="BackgroundColor" Value="{StaticResource Primary}"/>
+        <Setter Property="TextColor" Value="{StaticResource Secondary}"/>
+    </Style>
+
+    <Style TargetType="Button" ApplyToDerivedTypes="True" x:Key="SecondaryButtonStyle">
+        <Setter Property="BackgroundColor" Value="{StaticResource Quarternary}"/>
+        <Setter Property="TextColor" Value="{StaticResource Primary}"/>
+    </Style>
+
+    <Style TargetType="Button" ApplyToDerivedTypes="True" x:Key="TernaryButtonStyle">
+        <Setter Property="BackgroundColor" Value="{StaticResource Secondary}"/>
+        <Setter Property="TextColor" Value="{StaticResource Primary}"/>
+    </Style>
+
+    <Style TargetType="Button" ApplyToDerivedTypes="True" x:Key="QuarternaryButtonStyle">
+        <Setter Property="BackgroundColor" Value="{StaticResource Tertiary}"/>
+        <Setter Property="TextColor" Value="{StaticResource Quarternary}"/>
+    </Style>
+
     <Style TargetType="CheckBox">
         <Setter Property="Color" Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}" />
         <Setter Property="MinimumHeightRequest" Value="44"/>
