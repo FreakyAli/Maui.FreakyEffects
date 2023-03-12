@@ -4,6 +4,8 @@ namespace Samples;
 
 public abstract class FreakyBaseViewModel : BindableObject
 {
+    private bool isBusy;
+
     protected bool SetProperty<T>(ref T storage, T value, [CallerMemberName] string propertyName = null)
     {
         if (EqualityComparer<T>.Default.Equals(storage, value))
@@ -25,6 +27,9 @@ public abstract class FreakyBaseViewModel : BindableObject
 
     }
 
-  
-
+    public bool IsBusy
+    {
+        get => isBusy;
+        set => SetProperty(ref isBusy, value);
+    }
 }

@@ -12,7 +12,6 @@ public partial class SkeletonEffectView : FreakyBaseContentPage
     {
         InitializeComponent();
         BindingContext = viewModel = new SkeletonEffectViewModel();
-        viewModel.SetPreviewItems();
         viewModel.IsBusy = true;
         timer = new Timer
         {
@@ -26,6 +25,5 @@ public partial class SkeletonEffectView : FreakyBaseContentPage
     private void Timer_Elapsed(object sender, ElapsedEventArgs e)
     {
         viewModel.IsBusy = false;
-        viewModel.LoadItems();
     }
 }

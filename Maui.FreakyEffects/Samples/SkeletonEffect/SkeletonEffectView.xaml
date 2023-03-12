@@ -6,7 +6,7 @@
              x:DataType="vm:SkeletonEffectViewModel"
              xmlns:views="clr-namespace:Samples"
              xmlns:freakyControls="clr-namespace:Maui.FreakyControls;assembly=Maui.FreakyControls"
-             xmlns:freakyEffects="clr-namespace:Maui.FreakyEffects.Skeleton;assembly=Maui.FreakyEffects"
+             xmlns:sk="clr-namespace:Maui.FreakyEffects.Skeleton;assembly=Maui.FreakyEffects"
              BackgroundColor="{StaticResource Primary}"
              BackButtonCommand= "{Binding BackButtonCommand}"
              HeaderText="Profile">
@@ -37,13 +37,23 @@
                         Spacing="5"
                         BackgroundColor="{StaticResource Secondary}">
                         <Label
+                         sk:SkeletonEffect.Animation="{sk:DefaultAnimation Source=Fade, Interval='600',Parameter='0.3' }"
+                         sk:SkeletonEffect.IsParent="True"
+                         sk:SkeletonEffect.IsBusy="{Binding IsBusy}"
+                         sk:SkeletonEffect.BackgroundColor="LightGray"
+                         HorizontalOptions="Center"
                          Text="Gulam Ali Hakim"
                          FontAttributes="Bold"
                          HorizontalTextAlignment="Center"
                          FontSize="Title"
                             />
                         <Label
+                         sk:SkeletonEffect.Animation="{sk:DefaultAnimation Source=Fade, Interval='600',Parameter='0.3' }"
+                         sk:SkeletonEffect.IsParent="True"
+                         sk:SkeletonEffect.IsBusy="{Binding IsBusy}"
+                         sk:SkeletonEffect.BackgroundColor="LightGray"
                          Text=".Net Developer!"
+                         HorizontalOptions="Center"
                          HorizontalTextAlignment="Center"
                          FontSize="Small"
                          TextColor="Gray"
@@ -62,24 +72,40 @@
                                     Text="Students"/>
                                 <HorizontalStackLayout HorizontalOptions="Center">
                                     <freakyControls:FreakyCircularImage
+                                        sk:SkeletonEffect.Animation="{sk:DefaultAnimation Source=Fade, Interval='600',Parameter='0.3' }"
+                                        sk:SkeletonEffect.IsParent="True"
+                                        sk:SkeletonEffect.IsBusy="{Binding IsBusy}"
+                                        sk:SkeletonEffect.BackgroundColor="LightGray"
                                         HeightRequest="20"
                                         WidthRequest="20"
                                         Aspect="AspectFill"
                                         Source="{x:Static views:Constants.Profile}"
                                         />
                                     <freakyControls:FreakyCircularImage
+                                        sk:SkeletonEffect.Animation="{sk:DefaultAnimation Source=Fade, Interval='600',Parameter='0.3' }"
+                                        sk:SkeletonEffect.IsParent="True"
+                                        sk:SkeletonEffect.IsBusy="{Binding IsBusy}"
+                                        sk:SkeletonEffect.BackgroundColor="LightGray"
                                         HeightRequest="20"
                                         WidthRequest="20"
                                         Aspect="AspectFill"
                                         Source="{x:Static views:Constants.Profile1}"
                                         />
                                     <freakyControls:FreakyCircularImage
+                                        sk:SkeletonEffect.Animation="{sk:DefaultAnimation Source=Fade, Interval='600',Parameter='0.3' }"
+                                        sk:SkeletonEffect.IsParent="True"
+                                        sk:SkeletonEffect.IsBusy="{Binding IsBusy}"
+                                        sk:SkeletonEffect.BackgroundColor="LightGray"
                                         HeightRequest="20"
                                         WidthRequest="20"
                                         Aspect="AspectFill"
                                         Source="{x:Static views:Constants.Profile3}"
                                         />
                                     <Label
+                                    sk:SkeletonEffect.Animation="{sk:DefaultAnimation Source=Fade, Interval='600',Parameter='0.3' }"
+                                    sk:SkeletonEffect.IsParent="True"
+                                    sk:SkeletonEffect.IsBusy="{Binding IsBusy}"
+                                    sk:SkeletonEffect.BackgroundColor="LightGray"
                                     HorizontalTextAlignment="Start"
                                     FontAttributes="Bold"
                                     Text="310"/>
@@ -93,24 +119,40 @@
                                     Text="Content"/>
                                 <HorizontalStackLayout HorizontalOptions="Center">
                                     <freakyControls:FreakyCircularImage
+                                        sk:SkeletonEffect.Animation="{sk:DefaultAnimation Source=Fade, Interval='600',Parameter='0.3' }"
+                                        sk:SkeletonEffect.IsParent="True"
+                                        sk:SkeletonEffect.IsBusy="{Binding IsBusy}"
+                                        sk:SkeletonEffect.BackgroundColor="LightGray"
                                         HeightRequest="20"
                                         WidthRequest="20"
                                         Aspect="AspectFill"
                                         Source="{x:Static views:Constants.Profile}"
                                         />
                                     <freakyControls:FreakyCircularImage
+                                        sk:SkeletonEffect.Animation="{sk:DefaultAnimation Source=Fade, Interval='600',Parameter='0.3' }"
+                                        sk:SkeletonEffect.IsParent="True"
+                                        sk:SkeletonEffect.IsBusy="{Binding IsBusy}"
+                                        sk:SkeletonEffect.BackgroundColor="LightGray"
                                         HeightRequest="20"
                                         WidthRequest="20"
                                         Aspect="AspectFill"
                                         Source="{x:Static views:Constants.Profile1}"
                                         />
                                     <freakyControls:FreakyCircularImage
+                                        sk:SkeletonEffect.Animation="{sk:DefaultAnimation Source=Fade, Interval='600',Parameter='0.3' }"
+                                        sk:SkeletonEffect.IsParent="True"
+                                        sk:SkeletonEffect.IsBusy="{Binding IsBusy}"
+                                        sk:SkeletonEffect.BackgroundColor="LightGray"
                                         HeightRequest="20"
                                         WidthRequest="20"
                                         Aspect="AspectFill"
                                         Source="{x:Static views:Constants.Profile3}"
                                         />
                                     <Label
+                                    sk:SkeletonEffect.Animation="{sk:DefaultAnimation Source=Fade, Interval='600',Parameter='0.3' }"
+                                    sk:SkeletonEffect.IsParent="True"
+                                    sk:SkeletonEffect.IsBusy="{Binding IsBusy}"
+                                    sk:SkeletonEffect.BackgroundColor="LightGray"
                                     HorizontalTextAlignment="Center"
                                     FontAttributes="Bold"
                                     Text="1.2M"/>
@@ -124,24 +166,40 @@
                                     Text="Followers"/>
                                 <HorizontalStackLayout HorizontalOptions="Center">
                                     <freakyControls:FreakyCircularImage
+                                        sk:SkeletonEffect.Animation="{sk:DefaultAnimation Source=Fade, Interval='600',Parameter='0.3' }"
+                                        sk:SkeletonEffect.IsParent="True"
+                                        sk:SkeletonEffect.IsBusy="{Binding IsBusy}"
+                                        sk:SkeletonEffect.BackgroundColor="LightGray"
                                         HeightRequest="20"
                                         WidthRequest="20"
                                         Aspect="AspectFill"
                                         Source="{x:Static views:Constants.Profile}"
                                         />
                                     <freakyControls:FreakyCircularImage
+                                        sk:SkeletonEffect.Animation="{sk:DefaultAnimation Source=Fade, Interval='600',Parameter='0.3' }"
+                                        sk:SkeletonEffect.IsParent="True"
+                                        sk:SkeletonEffect.IsBusy="{Binding IsBusy}"
+                                        sk:SkeletonEffect.BackgroundColor="LightGray"
                                         HeightRequest="20"
                                         WidthRequest="20"
                                         Aspect="AspectFill"
                                         Source="{x:Static views:Constants.Profile1}"
                                         />
                                     <freakyControls:FreakyCircularImage
+                                        sk:SkeletonEffect.Animation="{sk:DefaultAnimation Source=Fade, Interval='600',Parameter='0.3' }"
+                                        sk:SkeletonEffect.IsParent="True"
+                                        sk:SkeletonEffect.IsBusy="{Binding IsBusy}"
+                                        sk:SkeletonEffect.BackgroundColor="LightGray"
                                         HeightRequest="20"
                                         WidthRequest="20"
                                         Aspect="AspectFill"
                                         Source="{x:Static views:Constants.Profile3}"
                                         />
                                     <Label
+                                    sk:SkeletonEffect.Animation="{sk:DefaultAnimation Source=Fade, Interval='600',Parameter='0.3' }"
+                                    sk:SkeletonEffect.IsParent="True"
+                                    sk:SkeletonEffect.IsBusy="{Binding IsBusy}"
+                                    sk:SkeletonEffect.BackgroundColor="LightGray"
                                     HorizontalTextAlignment="Center"
                                     FontAttributes="Bold"
                                     Text="35"/>
@@ -182,6 +240,10 @@
                                     ColumnSpacing="10"
                                     ColumnDefinitions="2*, 8*">
                                         <Border
+                                    sk:SkeletonEffect.IsParent="True"
+                                    sk:SkeletonEffect.IsBusy="{Binding IsBusy}"
+                                    sk:SkeletonEffect.BackgroundColor="LightGray"
+                                    sk:SkeletonEffect.Animation="{sk:DefaultAnimation Source=Fade, Interval='600',Parameter='0.3' }"
                                     Grid.Column="0"
                                     Margin="15,0,0,0"
                                     VerticalOptions="Start"
@@ -193,24 +255,54 @@
                                                 <RoundRectangle CornerRadius="5" />
                                             </Border.StrokeShape>
                                             <freakyControls:FreakySvgImageView
-                                        HeightRequest="30"
-                                        WidthRequest="30"
-                                        ImageColor="White"
-                                        ResourceId="{x:Static views:Constants.BarChart}"
-                                        SvgAssembly="{x:Static views:Constants.SvgAssembly}"
-                                        SvgMode="AspectFit">
+                                            sk:SkeletonEffect.IsBusy="{Binding IsBusy}"
+                                            sk:SkeletonEffect.Hide="True"
+                                            HeightRequest="30"
+                                            WidthRequest="30"
+                                            ImageColor="White"
+                                            ResourceId="{x:Static views:Constants.BarChart}"
+                                            SvgAssembly="{x:Static views:Constants.SvgAssembly}"
+                                            SvgMode="AspectFit">
                                             </freakyControls:FreakySvgImageView>
                                         </Border>
                                         <VerticalStackLayout Grid.Column="1" VerticalOptions="Start">
-                                            <Label Text="Become a UI Designer" FontSize="Medium" FontAttributes="Bold"/>
-                                            <Label Text="Learn all the skills you need" TextColor="Gray" FontSize="Micro"/>
+                                            <Label
+                                        sk:SkeletonEffect.Animation="{sk:DefaultAnimation Source=Fade, Interval='600',Parameter='0.3' }"
+                                        sk:SkeletonEffect.IsParent="True"
+                                        sk:SkeletonEffect.IsBusy="{Binding IsBusy}"
+                                        sk:SkeletonEffect.BackgroundColor="LightGray"
+                                        Text="Become a UI Designer"
+                                        FontSize="Medium"
+                                        FontAttributes="Bold"/>
+                                            <Label
+                                        sk:SkeletonEffect.Animation="{sk:DefaultAnimation Source=Fade, Interval='600',Parameter='0.3' }"
+                                        sk:SkeletonEffect.IsBusy="{Binding IsBusy}"
+                                        sk:SkeletonEffect.BackgroundColor="LightGray"
+                                        Text="Learn all the skills you need"
+                                        TextColor="Gray"
+                                        FontSize="Micro"/>
                                         </VerticalStackLayout>
                                     </Grid>
 
                                     <Grid Grid.Row="2" ColumnSpacing="10" Margin="30" VerticalOptions="End" ColumnDefinitions="2*,2*,2*,4*">
-                                        <Button Grid.Column="0" VerticalOptions="End" FontSize="Micro" Style="{StaticResource PrimaryButtonStyle}" Text="21k"/>
-                                        <Button Grid.Column="1" VerticalOptions="End" FontSize="Micro" Style="{StaticResource PrimaryButtonStyle}" Text="4.6"/>
-                                        <Button Grid.Column="3" Text="$120.00" BackgroundColor="#C9AA96" TextColor="Black"/>
+                                        <Button
+                                        sk:SkeletonEffect.Animation="{sk:DefaultAnimation Source=Fade, Interval='600',Parameter='0.3' }"
+                                        sk:SkeletonEffect.IsParent="True"
+                                        sk:SkeletonEffect.IsBusy="{Binding IsBusy}"
+                                        sk:SkeletonEffect.BackgroundColor="LightGray"
+                                        Grid.Column="0" VerticalOptions="End" FontSize="Micro" Style="{StaticResource PrimaryButtonStyle}" Text="21k"/>
+                                        <Button
+                                        sk:SkeletonEffect.Animation="{sk:DefaultAnimation Source=Fade, Interval='600',Parameter='0.3' }"
+                                        sk:SkeletonEffect.IsParent="True"
+                                        sk:SkeletonEffect.IsBusy="{Binding IsBusy}"
+                                        sk:SkeletonEffect.BackgroundColor="LightGray"
+                                        Grid.Column="1" VerticalOptions="End" FontSize="Micro" Style="{StaticResource PrimaryButtonStyle}" Text="4.6"/>
+                                        <Button
+                                        sk:SkeletonEffect.Animation="{sk:DefaultAnimation Source=Fade, Interval='600',Parameter='0.3' }"
+                                        sk:SkeletonEffect.IsParent="True"
+                                        sk:SkeletonEffect.IsBusy="{Binding IsBusy}"
+                                        sk:SkeletonEffect.BackgroundColor="LightGray"
+                                        Grid.Column="3" Text="$120.00" BackgroundColor="#C9AA96" TextColor="Black"/>
                                     </Grid>
                                 </Grid>
                             </Border>
@@ -224,6 +316,10 @@
                                     >
                                     <Grid ColumnDefinitions="2*,6*,1*">
                                         <Frame
+                                        sk:SkeletonEffect.Animation="{sk:DefaultAnimation Source=Fade, Interval='600',Parameter='0.3' }"
+                                        sk:SkeletonEffect.IsParent="True"
+                                        sk:SkeletonEffect.IsBusy="{Binding IsBusy}"
+                                        sk:SkeletonEffect.BackgroundColor="LightGray"
                                         Margin="20,10,20,10"
                                         IsClippedToBounds="True"
                                         CornerRadius="10"
@@ -234,16 +330,32 @@
                                         BorderColor="Transparent"
                                         >
                                             <freakyControls:FreakyImage
+                                        sk:SkeletonEffect.IsBusy="{Binding IsBusy}"
+                                        sk:SkeletonEffect.Hide="True"
                                         Source="{x:Static views:Constants.Profile2}"
                                         Aspect="AspectFit"/>
                                         </Frame>
 
                                         <VerticalStackLayout Margin="10" Grid.Column="1" VerticalOptions="Center">
-                                            <Label Text="Video Introduction" TextColor="{StaticResource Secondary}" FontAttributes="Bold" FontSize="Medium"/>
-                                            <Label Text="2m" FontSize="Small" TextColor="{StaticResource Secondary}" />
+                                            <Label
+                                        sk:SkeletonEffect.Animation="{sk:DefaultAnimation Source=Fade, Interval='600',Parameter='0.3' }"
+                                        sk:SkeletonEffect.IsParent="True"
+                                        sk:SkeletonEffect.IsBusy="{Binding IsBusy}"
+                                        sk:SkeletonEffect.BackgroundColor="LightGray"
+                                        Text="Video Introduction" TextColor="{StaticResource Secondary}" FontAttributes="Bold" FontSize="Medium"/>
+                                            <Label
+                                        sk:SkeletonEffect.Animation="{sk:DefaultAnimation Source=Fade, Interval='600',Parameter='0.3' }"
+                                        sk:SkeletonEffect.IsParent="True"
+                                        sk:SkeletonEffect.IsBusy="{Binding IsBusy}"
+                                        sk:SkeletonEffect.BackgroundColor="LightGray"
+                                        Text="2m" FontSize="Small" TextColor="{StaticResource Secondary}" />
                                         </VerticalStackLayout>
 
                                         <freakyControls:FreakySvgImageView
+                                        sk:SkeletonEffect.Animation="{sk:DefaultAnimation Source=Fade, Interval='600',Parameter='0.3' }"
+                                        sk:SkeletonEffect.Hide="True"
+                                        sk:SkeletonEffect.IsBusy="{Binding IsBusy}"
+                                        sk:SkeletonEffect.BackgroundColor="LightGray"
                                         Grid.Column="2"
                                         HeightRequest="30"
                                         Margin="0,0,10,0"
@@ -264,11 +376,17 @@
                     BorderColor="Transparent"
                     IsClippedToBounds="True"
                     CornerRadius="10"
+                    sk:SkeletonEffect.Animation="{sk:DefaultAnimation Source=Fade, Interval='600',Parameter='0.3' }"
+                    sk:SkeletonEffect.IsParent="True"
+                    sk:SkeletonEffect.IsBusy="{Binding IsBusy}"
+                    sk:SkeletonEffect.BackgroundColor="LightGray"
                     Padding="0"
                     AbsoluteLayout.LayoutBounds=".5,0.03,100,100"
                     AbsoluteLayout.LayoutFlags="PositionProportional"
                     >
                     <freakyControls:FreakyImage
+                    sk:SkeletonEffect.IsBusy="{Binding IsBusy}"
+                    sk:SkeletonEffect.Hide="True"
                     Source="{x:Static views:Constants.Profile2}"
                     Aspect="AspectFit"
                     />
