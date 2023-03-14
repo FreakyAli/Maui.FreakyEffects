@@ -15,15 +15,14 @@ public partial class TouchTrackingView : FreakyBaseContentPage
     public TouchTrackingView()
     {
         InitializeComponent();
+        this.BindingContext = new TouchTrackingViewModel();
         this.SizeChanged += OnSizeChanged;
-
     }
 
     private void OnSizeChanged(object sender, EventArgs eventArgs)
     {
         SetSceneCenter();
     }
-
 
     private void SetSceneCenter()
     {
@@ -76,4 +75,3 @@ public partial class TouchTrackingView : FreakyBaseContentPage
         _scene.Render(canvas);
     }
 }
-

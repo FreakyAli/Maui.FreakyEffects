@@ -41,7 +41,8 @@ public class MainViewModel : FreakyBaseViewModel
     {
         Items = new ObservableCollection<string>
             {
-                AppShell.skeleton
+                AppShell.skeleton,
+                AppShell.touchTracking
             };
     }
 }
