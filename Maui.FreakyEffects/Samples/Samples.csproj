@@ -62,9 +62,11 @@
 	</ItemGroup>
 	<ItemGroup>
 	  <None Remove="SkeletonEffect\" />
+	  <None Remove="TouchTracking\" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="SkeletonEffect\" />
+	  <Folder Include="TouchTracking\" />
 	</ItemGroup>
 	<ItemGroup>
 	  <EmbeddedResource Include="Resources\Images\meatball_icon.svg" />
