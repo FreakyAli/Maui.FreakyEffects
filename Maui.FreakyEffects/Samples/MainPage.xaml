@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<page:FreakyBaseContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:page="clr-namespace:Samples"
+             HeaderText="Home"
+             IsContextVisible="False"
+             IsBackButtonVisible="False"
+             x:Class="Samples.MainPage">
+    <ContentView x:Name="template" ControlTemplate="{StaticResource HeaderControlTemplate}">
+        <ListView
+        ItemsSource="{Binding Items}"
+        BackgroundColor="White"
+        ItemTapped="ListView_ItemTapped"
+        SeparatorVisibility="None"
+        SelectionMode="None"
+        CachingStrategy="RecycleElementAndDataTemplate" >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell TextColor="Black"  Text="{Binding .}"  />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentView>
+</page:FreakyBaseContentPage>

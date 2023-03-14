@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Samples.FreakyBaseContentPage"
+             BackgroundColor="{StaticResource Primary}"
+             xmlns:constants="clr-namespace:Samples"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:controls="clr-namespace:Maui.FreakyControls;assembly=Maui.FreakyControls"
+             x:Name="this">
+    <ContentPage.Behaviors>
+        <toolkit:StatusBarBehavior StatusBarColor="{StaticResource Primary}" StatusBarStyle="LightContent" />
+    </ContentPage.Behaviors>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ControlTemplate x:Key="HeaderControlTemplate">
+                <AbsoluteLayout>
+                    <Grid
+                        BackgroundColor="{TemplateBinding Parent.NavBarBackgroundColor}"
+                        AbsoluteLayout.LayoutBounds="0,0,1,1"
+                        AbsoluteLayout.LayoutFlags="All"
+                        RowSpacing="0"
+                        ColumnSpacing="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="25*" />
+                            <ColumnDefinition Width="50*" />
+                            <ColumnDefinition Width="25*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="7*" />
+                            <RowDefinition Height="93*" />
+                        </Grid.RowDefinitions>
+                        <Border
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            Margin="15,0,0,0"
+                            StrokeThickness="0"
+                            IsVisible="{TemplateBinding Parent.IsBackButtonVisible}"
+                            BackgroundColor="{StaticResource Tertiary}"
+                            VerticalOptions="Center"
+                            HorizontalOptions="Start"
+                            HeightRequest="30"
+                            WidthRequest="30">
+                            <Border.GestureRecognizers>
+                                <TapGestureRecognizer Command="{TemplateBinding Parent.BackButtonCommand}"/>
+                            </Border.GestureRecognizers>
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="5" />
+                            </Border.StrokeShape>
+                            <controls:FreakySvgImageView
+                            InputTransparent="True"
+                            ResourceId="{x:Static constants:Constants.BackButton}"
+                            SvgAssembly="{x:Static constants:Constants.SvgAssembly}"
+                            ImageColor="White"
+                            SvgMode="AspectFit" />
+                        </Border>
+                        <Label
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            Margin="0,0,0,0"
+                            FontSize="Medium"
+                            TextColor="{TemplateBinding Parent.HeaderTextColor}"
+                            HorizontalOptions="CenterAndExpand"
+                            Style="{DynamicResource HeaderLabelStyle}"
+                            Text="{TemplateBinding Parent.HeaderText}"
+                            VerticalOptions="Center" />
+                        <Border
+                            Grid.Row="0"
+                            Grid.Column="2"
+                            Margin="0,0,15,0"
+                            StrokeThickness="0"
+                            IsVisible="{TemplateBinding Parent.IsContextVisible}"
+                            BackgroundColor="{StaticResource Tertiary}"
+                            VerticalOptions="Center"
+                            HorizontalOptions="End"
+                            HeightRequest="30"
+                            WidthRequest="30">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="5" />
+                            </Border.StrokeShape>
+                            <controls:FreakySvgImageView
+                            ImageColor="White"
+                            ResourceId="{x:Static constants:Constants.MeatballMenu}"
+                            SvgAssembly="{x:Static constants:Constants.SvgAssembly}"
+                            SvgMode="AspectFit">
+                            </controls:FreakySvgImageView>
+                        </Border>
+                        <ContentPresenter
+                            Grid.Row="1"
+                            IsClippedToBounds="True"
+                            BackgroundColor="{StaticResource Primary}"
+                            Grid.ColumnSpan="3"
+                            VerticalOptions="FillAndExpand" />
+                    </Grid>
+                </AbsoluteLayout>
+            </ControlTemplate>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+</ContentPage>
