@@ -21,9 +21,17 @@ If you're looking to add some unique visual effects to your Maui applications be
 | iOS             | iOS 11.0 + |
 | Android    | API 23+ (Marshmallow) | 
 
+## Previews:
+
+| iOS | Android |
+| --- | --- |
+| <img src="https://user-images.githubusercontent.com/31090457/225077296-a87ef6ea-7ef4-4ab6-a904-960bcd13654b.gif" width="250" height="550"/>| <img src="https://user-images.githubusercontent.com/31090457/225077308-994f0265-463a-4109-bca1-8abc0cf634c4.gif" width="250" height="550"/> |
+
+Skeleton Effect's Profile Design Inspired from [here](https://www.behance.net/gallery/155366855/Daily-UI-Day-6-User-Profile?tracking_source=search_projects%7Cuser+profile)
+
 ## Installation
 
-Add our [NuGet](https://www.nuget.org/packages/FreakyEffects) package or 
+Add our [NuGet](https://www.nuget.org/packages/FreakyEffects) package or
 
 Run the following command to add nuget to your .Net MAUI app:
 
