@@ -15,7 +15,7 @@ public partial class SkeletonEffectView : FreakyBaseContentPage
         viewModel.IsBusy = true;
         timer = new Timer
         {
-            Interval = 10000
+            Interval = 5000
         };
         timer.AutoReset = false;
         timer.Elapsed += Timer_Elapsed;
@@ -25,5 +25,14 @@ public partial class SkeletonEffectView : FreakyBaseContentPage
     private void Timer_Elapsed(object sender, ElapsedEventArgs e)
     {
         viewModel.IsBusy = false;
+    }
+
+    async void Button_Clicked(System.Object sender, System.EventArgs e)
+    {
+        var canOpen = await Launcher.CanOpenAsync(Constants.ProfileUrl);
+        if (canOpen)
+        {
+            await Launcher.OpenAsync(Constants.ProfileUrl);
+        }
     }
 }
