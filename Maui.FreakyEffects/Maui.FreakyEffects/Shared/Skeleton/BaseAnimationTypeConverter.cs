@@ -16,7 +16,6 @@ public class BaseAnimationTypeConverter : TypeConverter
     /// <inheritdoc/>
 	public override object? ConvertFrom(ITypeDescriptorContext? context, CultureInfo? culture, object value)
     {
-
         return null;
         //var valueAsString = value?.ToString() ?? string.Empty;
 
@@ -33,7 +32,7 @@ public class BaseAnimationTypeConverter : TypeConverter
         //        valueAsString[embeddedResourcePrefix.Length..]);
         //}
         //else if (valueAsStringLowercase.StartsWith(fileSystemPrefix))
-        //{ 
+        //{
         //    return MediaSource.FromFile(valueAsString[fileSystemPrefix.Length..]);
         //}
 
@@ -59,4 +58,3 @@ public class BaseAnimationTypeConverter : TypeConverter
     //    return new DefaultAnimationExtension() { Source = type }.ProvideValue(null);
     //}
 }
-

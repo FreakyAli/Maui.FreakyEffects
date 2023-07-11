@@ -1,5 +1,4 @@
-﻿using System;
-namespace Maui.FreakyEffects.TouchTracking;
+﻿namespace Maui.FreakyEffects.TouchTracking;
 
 public delegate void TouchActionEventHandler(object sender, TouchActionEventArgs args);
 
@@ -61,7 +60,6 @@ public struct TouchTrackingRect
     {
         return Contains(point.X, point.Y);
     }
-
 }
 
 public class TouchHandlerBase<TElement>
@@ -79,9 +77,11 @@ public class TouchHandlerBase<TElement>
         TouchAction?.Invoke(element, args);
     }
 
-    public virtual void RegisterEvents(TElement element) { }
+    public virtual void RegisterEvents(TElement element)
+    { }
 
-    public virtual void UnregisterEvents(TElement element) { }
+    public virtual void UnregisterEvents(TElement element)
+    { }
 }
 
 public class TouchActionEventArgs : EventArgs
@@ -102,4 +102,3 @@ public class TouchActionEventArgs : EventArgs
 
     public bool IsInContact { private set; get; }
 }
-

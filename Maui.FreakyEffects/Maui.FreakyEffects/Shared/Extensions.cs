@@ -1,14 +1,12 @@
-﻿using System;
-using Maui.FreakyEffects.TouchTracking;
-using SkiaSharp.Views.Maui.Controls.Hosting;
-using Microsoft.Maui.Controls.Internals;
-using Maui.FreakyEffects.Skeleton;
+﻿using Maui.FreakyEffects.TouchTracking;
+
 #if ANDROID
+
 using PlatformTouchEffects = Maui.FreakyEffects.Platforms.Android.TouchEffect;
+
 #elif IOS
 using PlatformTouchEffects = Maui.FreakyEffects.Platforms.iOS.TouchEffect;
 #endif
-
 
 namespace Maui.FreakyEffects;
 

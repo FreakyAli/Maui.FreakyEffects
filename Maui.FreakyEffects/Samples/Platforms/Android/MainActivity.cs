@@ -1,6 +1,5 @@
 ﻿using Android.App;
 using Android.Content.PM;
-using Android.OS;
 
 namespace Samples;
 
@@ -8,4 +7,3 @@ namespace Samples;
 public class MainActivity : MauiAppCompatActivity
 {
 }
-

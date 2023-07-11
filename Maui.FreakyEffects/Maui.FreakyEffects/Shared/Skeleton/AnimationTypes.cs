@@ -8,4 +8,3 @@ public enum AnimationTypes
     VerticalShake,
     HorizontalShake
 }
-

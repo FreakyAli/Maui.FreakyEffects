@@ -46,9 +46,6 @@
 		<None Include="maui_toolkit.png" Pack="true" Visible="false" PackagePath="" />
 	</ItemGroup>
 	<ItemGroup>
-		<Folder Include="Platforms\Android\" />
-		<Folder Include="Platforms\iOS\" />
-		<Folder Include="Shared\" />
 		<Folder Include="Shared\Skeleton\" />
 	</ItemGroup>
 	<ItemGroup>

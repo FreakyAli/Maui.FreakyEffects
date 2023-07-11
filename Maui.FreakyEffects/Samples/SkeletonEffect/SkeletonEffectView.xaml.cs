@@ -27,7 +27,7 @@ public partial class SkeletonEffectView : FreakyBaseContentPage
         viewModel.IsBusy = false;
     }
 
-    async void Button_Clicked(System.Object sender, System.EventArgs e)
+    private async void Button_Clicked(System.Object sender, System.EventArgs e)
     {
         var canOpen = await Launcher.CanOpenAsync(Constants.ProfileUrl);
         if (canOpen)

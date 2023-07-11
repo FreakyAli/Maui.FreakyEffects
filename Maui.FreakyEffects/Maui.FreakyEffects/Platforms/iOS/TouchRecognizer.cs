@@ -7,7 +7,7 @@ namespace Maui.FreakyEffects.Platforms.iOS;
 
 class TouchRecognizer : UIGestureRecognizer
 {
-    private readonly UIView _view;            // iOS UIView 
+    private readonly UIView _view;            // iOS UIView
     private readonly TouchHandler _touchHandler;
     bool _capture;
 
@@ -28,7 +28,6 @@ class TouchRecognizer : UIGestureRecognizer
     {
         viewDictionary.Remove(_view);
     }
-
 
     // touches = touches of interest; evt = all touches of type UITouch
     public override void TouchesBegan(NSSet touches, UIEvent evt)

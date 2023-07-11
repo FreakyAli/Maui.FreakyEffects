@@ -67,7 +67,6 @@ public partial class TouchTrackingView : FreakyBaseContentPage
         if (_scene == null)
         {
             InitSceneObjects();
-
         }
         SKImageInfo info = args.Info;
         SKSurface surface = args.Surface;

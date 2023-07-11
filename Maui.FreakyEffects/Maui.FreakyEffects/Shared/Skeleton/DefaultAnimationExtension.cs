@@ -15,12 +15,16 @@ public sealed class DefaultAnimationExtension : IMarkupExtension<BaseAnimation>
         {
             case AnimationTypes.Beat:
                 return new BeatAnimation(Interval, Parameter);
+
             case AnimationTypes.Fade:
                 return new FadeAnimation(Interval, Parameter);
+
             case AnimationTypes.VerticalShake:
                 return new VerticalShakeAnimation(Interval, Parameter);
+
             case AnimationTypes.HorizontalShake:
                 return new HorizontalShakeAnimation(Interval, Parameter);
+
             case AnimationTypes.None:
             default:
                 return null;

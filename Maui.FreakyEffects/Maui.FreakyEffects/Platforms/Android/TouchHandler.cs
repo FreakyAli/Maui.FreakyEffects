@@ -6,15 +6,15 @@ namespace Maui.FreakyEffects.Platforms.Android;
 
 public class TouchHandler : TouchHandlerBase<View>
 {
-    View _view;
-    bool _capture;
-    Func<double, double> _fromPixels;
-    int[] _locationOnScreen = new int[2];
+    private View _view;
+    private bool _capture;
+    private Func<double, double> _fromPixels;
+    private int[] _locationOnScreen = new int[2];
 
-    static Dictionary<View, TouchHandler> _viewDictionary =
+    private static Dictionary<View, TouchHandler> _viewDictionary =
         new Dictionary<View, TouchHandler>();
 
-    static Dictionary<int, TouchHandler> _idToTouchHandlerDictionary =
+    private static Dictionary<int, TouchHandler> _idToTouchHandlerDictionary =
         new Dictionary<int, TouchHandler>();
 
     private float _lastX;
@@ -96,7 +96,6 @@ public class TouchHandler : TouchHandlerBase<View>
         senderView.GetLocationOnScreen(_locationOnScreen);
         TouchTrackingPoint screenPointerCoords =
             GetScreenPointerCoordinates(_locationOnScreen, motionEvent, pointerIndex);
-
 
         // Use ActionMasked here rather than Action to reduce the number of possibilities
         switch (args.Event.ActionMasked)
@@ -269,4 +268,3 @@ public class TouchHandler : TouchHandlerBase<View>
             new TouchActionEventArgs(id, actionType, point, isInContact));
     }
 }
-

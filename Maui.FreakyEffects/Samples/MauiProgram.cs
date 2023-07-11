@@ -1,8 +1,7 @@
-﻿using Microsoft.Extensions.Logging;
-using Maui.FreakyEffects;
-using Microsoft.Maui.Hosting;
+﻿using CommunityToolkit.Maui;
 using Maui.FreakyControls.Extensions;
-using CommunityToolkit.Maui;
+using Maui.FreakyEffects;
+using Microsoft.Extensions.Logging;
 
 namespace Samples;
 

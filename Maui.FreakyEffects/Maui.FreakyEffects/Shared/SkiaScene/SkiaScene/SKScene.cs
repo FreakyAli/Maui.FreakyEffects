@@ -95,10 +95,8 @@ public class SKScene : ISKScene
         Matrix.PreConcat(SKMatrix.CreateScale(scaleFactor, scaleFactor, point.X, point.Y));
     }
 
-
     public SKPoint GetCanvasPointFromViewPoint(SKPoint viewPoint)
     {
-
         SKMatrix invertedMatrix;
         if (!Matrix.TryInvert(out invertedMatrix))
         {

@@ -22,4 +22,3 @@ public class VerticalShakeAnimation : BaseAnimation
             await self.TranslateTo(0, 0, 100);
     }
 }
-

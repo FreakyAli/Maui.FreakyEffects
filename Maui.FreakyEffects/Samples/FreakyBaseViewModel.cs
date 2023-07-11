@@ -19,12 +19,10 @@ public abstract class FreakyBaseViewModel : BindableObject
 
     protected virtual void ViewOnAppearing()
     {
-
     }
 
     protected virtual void ViewOnDisappearing()
     {
-
     }
 
     public bool IsBusy
