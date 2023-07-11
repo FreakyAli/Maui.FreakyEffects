@@ -3,7 +3,7 @@ using Maui.FreakyEffects.TouchPress;
 using Microsoft.Maui.Controls.Platform;
 using UIKit;
 
-namespace Maui.FreakyEffects.iOS
+namespace Maui.FreakyEffects.Platforms.iOS
 {
     public class TouchAndPressEffect : PlatformEffect
     {
