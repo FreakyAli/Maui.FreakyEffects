@@ -22,4 +22,3 @@ public class BeatAnimation : BaseAnimation
         await self.ScaleTo(1, 100);
     }
 }
-

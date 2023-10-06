@@ -5,7 +5,6 @@ public partial class AppShell : Shell
     internal const string skeleton = "Skeleton";
     internal const string touchTracking = "TouchTracking/SkiaScene";
 
-
     public AppShell()
     {
         InitializeComponent();
@@ -13,4 +12,3 @@ public partial class AppShell : Shell
         Routing.RegisterRoute(touchTracking, typeof(TouchTracking.TouchTrackingView));
     }
 }
-

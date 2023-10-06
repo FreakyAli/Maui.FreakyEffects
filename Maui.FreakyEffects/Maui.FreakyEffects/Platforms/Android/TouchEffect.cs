@@ -44,4 +44,3 @@ public class TouchEffect : Microsoft.Maui.Controls.Platform.PlatformEffect
         _touchHandler.UnregisterEvents(_view);
     }
 }
-

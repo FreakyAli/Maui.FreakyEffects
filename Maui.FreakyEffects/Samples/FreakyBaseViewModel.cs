@@ -27,14 +27,11 @@ public abstract class FreakyBaseViewModel : BindableObject
 
     protected virtual void ViewOnAppearing()
     {
-
     }
 
     protected virtual void ViewOnDisappearing()
     {
-
     }
-
 
     private async void ExecuteOnBackButtonClicked()
     {

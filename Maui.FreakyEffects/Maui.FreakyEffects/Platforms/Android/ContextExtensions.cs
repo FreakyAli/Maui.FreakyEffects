@@ -33,4 +33,3 @@ public static class ContextExtensions
         return (float)Math.Round(dp * _displayDensity);
     }
 }
-

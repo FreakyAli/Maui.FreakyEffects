@@ -5,7 +5,7 @@ public class VerticalShakeAnimation : BaseAnimation
     public VerticalShakeAnimation(int interval, double? parameter)
     {
         this.Interval = (uint)interval;
-        this.Parameter = parameter.HasValue ? parameter.Value : 15;
+        this.Parameter = parameter ?? 15;
     }
 
     protected override async Task<bool> Animate(BindableObject bindable)
@@ -22,4 +22,3 @@ public class VerticalShakeAnimation : BaseAnimation
             await self.TranslateTo(0, 0, 100);
     }
 }
-

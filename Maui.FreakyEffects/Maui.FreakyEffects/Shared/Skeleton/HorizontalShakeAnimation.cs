@@ -22,4 +22,3 @@ public class HorizontalShakeAnimation : BaseAnimation
             await self.TranslateTo(0, 0, 100);
     }
 }
-

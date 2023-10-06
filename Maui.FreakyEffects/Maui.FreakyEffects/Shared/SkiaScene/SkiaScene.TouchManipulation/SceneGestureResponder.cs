@@ -8,15 +8,15 @@ public class SceneGestureResponder : ISceneGestureResponder
     private readonly ISKScene _skScene;
     private readonly ITouchGestureRecognizer _touchGestureRecognizer;
 
+    public TouchManipulationMode TouchManipulationMode { get; set; }
+    public bool EnableTwoFingersPanInIsotropicScaleMode { get; set; }
+    public float DoubleTapScaleFactor { get; set; } = 2f;
+
     public SceneGestureResponder(ISKScene skScene, ITouchGestureRecognizer touchGestureRecognizer)
     {
         _skScene = skScene;
         _touchGestureRecognizer = touchGestureRecognizer;
     }
-
-    public TouchManipulationMode TouchManipulationMode { get; set; }
-    public bool EnableTwoFingersPanInIsotropicScaleMode { get; set; }
-    public float DoubleTapScaleFactor { get; set; } = 2f;
 
     public void StartResponding()
     {
@@ -30,7 +30,6 @@ public class SceneGestureResponder : ISceneGestureResponder
         _touchGestureRecognizer.OnPinch -= TouchGestureRecognizerOnPinch;
         _touchGestureRecognizer.OnDoubleTap -= TouchGestureRecognizerOnDoubleTap;
     }
-
 
     protected virtual void TouchGestureRecognizerOnPinch(object sender, PinchEventArgs args)
     {

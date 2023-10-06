@@ -26,7 +26,6 @@ public class TouchEffect : Microsoft.Maui.Controls.Platform.PlatformEffect
         _touchHandler.TouchAction += TouchHandlerOnTouch;
         _touchHandler.Capture = _touchEffect.Capture;
         _touchHandler.RegisterEvents(_view);
-
     }
 
     private void TouchHandlerOnTouch(object sender, TouchActionEventArgs args)
