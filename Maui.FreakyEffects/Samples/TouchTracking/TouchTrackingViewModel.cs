@@ -1,9 +1,6 @@
 ﻿using System;
-namespace Samples.TouchTracking
+namespace Samples.TouchTracking;
+
+public class TouchTrackingViewModel : FreakyBaseViewModel
 {
-    public class TouchTrackingViewModel : FreakyBaseViewModel
-    {
-
-    }
 }
-

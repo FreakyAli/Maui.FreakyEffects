@@ -24,6 +24,4 @@ public struct TouchTrackingRect
     {
         return Contains(point.X, point.Y);
     }
-
 }
-

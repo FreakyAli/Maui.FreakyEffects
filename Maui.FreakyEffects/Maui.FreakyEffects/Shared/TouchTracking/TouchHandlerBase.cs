@@ -19,4 +19,3 @@ public class TouchHandlerBase<TElement>
 
     public virtual void UnregisterEvents(TElement element) { }
 }
-

@@ -9,4 +9,3 @@ public enum TouchActionType
     Cancelled = 4,
     Exited = 5
 }
-
