@@ -10,7 +10,7 @@
 		<RootNamespace>Maui.FreakyEffects</RootNamespace>
 		<AssemblyVersion>0.1.0</AssemblyVersion>
 		<AssemblyFileVersion>0.1.0</AssemblyFileVersion>
-		<Version>0.1.0-pre</Version>
+		<Version>0.1.0</Version>
 		<NeutralLanguage>en</NeutralLanguage>
 		<!--Version of C# to use -->
 		<PackageId>FreakyEffects</PackageId>
