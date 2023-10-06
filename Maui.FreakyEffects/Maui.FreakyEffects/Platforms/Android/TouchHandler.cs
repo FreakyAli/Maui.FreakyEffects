@@ -97,7 +97,6 @@ public class TouchHandler : TouchHandlerBase<View>
         TouchTrackingPoint screenPointerCoords =
             GetScreenPointerCoordinates(_locationOnScreen, motionEvent, pointerIndex);
 
-
         // Use ActionMasked here rather than Action to reduce the number of possibilities
         switch (args.Event.ActionMasked)
         {
@@ -269,4 +268,3 @@ public class TouchHandler : TouchHandlerBase<View>
             new TouchActionEventArgs(id, actionType, point, isInContact));
     }
 }
-

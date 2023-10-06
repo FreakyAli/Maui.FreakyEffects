@@ -29,7 +29,6 @@ class TouchRecognizer : UIGestureRecognizer
         viewDictionary.Remove(_view);
     }
 
-
     // touches = touches of interest; evt = all touches of type UITouch
     public override void TouchesBegan(NSSet touches, UIEvent evt)
     {
@@ -75,7 +74,6 @@ class TouchRecognizer : UIGestureRecognizer
     public override void TouchesEnded(NSSet touches, UIEvent evt)
     {
         base.TouchesEnded(touches, evt);
-
         foreach (UITouch touch in touches.Cast<UITouch>())
         {
             long id = touch.Handle.Handle.ToInt64();
@@ -120,8 +118,6 @@ class TouchRecognizer : UIGestureRecognizer
     void CheckForBoundaryHop(UITouch touch)
     {
         long id = touch.Handle.Handle.ToInt64();
-
-        // TODO: Might require converting to a List for multiple hits
         TouchRecognizer recognizerHit = null;
 
         foreach (UIView view in viewDictionary.Keys)

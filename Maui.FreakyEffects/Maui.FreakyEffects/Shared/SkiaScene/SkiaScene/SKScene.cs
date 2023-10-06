@@ -99,12 +99,9 @@ public class SKScene : ISKScene
         Matrix = Matrix.PreConcat(SKMatrix.CreateScale(scaleFactor, scaleFactor, point.X, point.Y));
     }
 
-
     public SKPoint GetCanvasPointFromViewPoint(SKPoint viewPoint)
     {
-
-        SKMatrix invertedMatrix;
-        if (!Matrix.TryInvert(out invertedMatrix))
+        if (!Matrix.TryInvert(out SKMatrix invertedMatrix))
         {
             return SKPoint.Empty;
         }
@@ -134,7 +131,7 @@ public class SKScene : ISKScene
         //https://stackoverflow.com/questions/4361242/extract-rotation-scale-values-from-2d-transformation-matrix
         var scaleX = Matrix.ScaleX;
         var skewY = Matrix.SkewY;
-        var result = Math.Sqrt(scaleX * scaleX + skewY * skewY);
+        var result = Math.Sqrt((scaleX * scaleX) + (skewY * skewY));
         return (float)result;
     }
 }
