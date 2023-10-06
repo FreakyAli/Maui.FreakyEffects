@@ -37,7 +37,10 @@ public class SKScene : ISKScene
             return;
         }
         var resultPoint = invertedMatrix.MapVector(vector.X, vector.Y);
-        Matrix.PreConcat(SKMatrix.CreateTranslation(resultPoint.X, resultPoint.Y));
+
+        // TODO: Matrix.IsIdentity was true, even after multiple gestures, which means that the Matrix doesn't hold on to it's new values. Matrix = ... is the right syntax.
+        Matrix = Matrix.PreConcat(SKMatrix.CreateTranslation(resultPoint.X, resultPoint.Y));
+
         if (CenterBoundary.IsEmpty)
         {
             return;
@@ -46,7 +49,7 @@ public class SKScene : ISKScene
         if (!CenterBoundary.Contains(center))
         {
             //rollback
-            Matrix.PreConcat(SKMatrix.CreateTranslation(-resultPoint.X, -resultPoint.Y));
+            Matrix = Matrix.PreConcat(SKMatrix.CreateTranslation(-resultPoint.X, -resultPoint.Y));
         }
     }
 
@@ -54,26 +57,26 @@ public class SKScene : ISKScene
     {
         var center = GetCenter();
         SKPoint diff = center - point;
-        Matrix.PreConcat(SKMatrix.CreateTranslation(diff.X, diff.Y));
+        Matrix = Matrix.PreConcat(SKMatrix.CreateTranslation(diff.X, diff.Y));
     }
 
     public void Rotate(SKPoint point, float radians)
     {
         var currentAngle = GetAngleInRadians();
         var angleDiff = radians - currentAngle;
-        Matrix.PreConcat(SKMatrix.CreateRotation(angleDiff, point.X, point.Y));
+        Matrix = Matrix.PreConcat(SKMatrix.CreateRotation(angleDiff, point.X, point.Y));
     }
 
     public void RotateByRadiansDelta(SKPoint point, float radiansDelta)
     {
-        Matrix.PreConcat(SKMatrix.CreateRotation(radiansDelta, point.X, point.Y));
+        Matrix = Matrix.PreConcat(SKMatrix.CreateRotation(radiansDelta, point.X, point.Y));
     }
 
     public void Zoom(SKPoint point, float scale)
     {
         var currentScale = GetScale();
         var scaleFactor = scale / currentScale;
-        Matrix.PreConcat(SKMatrix.CreateScale(scaleFactor, scaleFactor, point.X, point.Y));
+        Matrix = Matrix.PreConcat(SKMatrix.CreateScale(scaleFactor, scaleFactor, point.X, point.Y));
     }
 
     public void ZoomByScaleFactor(SKPoint point, float scaleFactor)
@@ -92,7 +95,8 @@ public class SKScene : ISKScene
                 return;
             }
         }
-        Matrix.PreConcat(SKMatrix.CreateScale(scaleFactor, scaleFactor, point.X, point.Y));
+
+        Matrix = Matrix.PreConcat(SKMatrix.CreateScale(scaleFactor, scaleFactor, point.X, point.Y));
     }
 
 

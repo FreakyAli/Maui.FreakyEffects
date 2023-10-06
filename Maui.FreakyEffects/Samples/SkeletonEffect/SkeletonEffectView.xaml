@@ -60,8 +60,8 @@
                             />
 
                         <Grid ColumnSpacing="30" Margin="30,10,30,0" ColumnDefinitions="*,*">
-                            <Button ImageSource="briefcase.png" Text="Hire Me!" Clicked="Button_Clicked" Grid.Column="0" Style="{StaticResource PrimaryButtonStyle}"/>
-                            <Button Text="Follow" Grid.Column="1" Clicked="Button_Clicked" Style="{StaticResource SecondaryButtonStyle}"/>
+                            <Button ImageSource="briefcase.png" Text="Hire Me!" Grid.Column="0" Style="{StaticResource PrimaryButtonStyle}"/>
+                            <Button Text="Follow" Grid.Column="1" Style="{StaticResource SecondaryButtonStyle}"/>
                         </Grid>
 
                         <Grid ColumnSpacing="30" Margin="50,10,50,0" ColumnDefinitions="*,*,*">
