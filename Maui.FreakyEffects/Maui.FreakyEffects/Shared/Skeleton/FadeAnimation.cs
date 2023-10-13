@@ -22,4 +22,3 @@ public class FadeAnimation : BaseAnimation
         await self.FadeTo(1, 100);
     }
 }
-

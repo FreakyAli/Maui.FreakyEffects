@@ -2,7 +2,6 @@
 
 	<PropertyGroup>
 		<TargetFrameworks>net7.0-android;net7.0-ios</TargetFrameworks>
-		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net7.0-windows10.0.19041.0</TargetFrameworks>
 		<OutputType>Exe</OutputType>
 		<RootNamespace>Samples</RootNamespace>
 		<UseMaui>true</UseMaui>
@@ -25,6 +24,9 @@
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net7.0-ios|AnyCPU'">
+	  <CreatePackage>false</CreatePackage>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net7.0-ios|AnyCPU'">
 	  <CreatePackage>false</CreatePackage>
 	</PropertyGroup>
 	<ItemGroup>
@@ -53,8 +55,8 @@
 
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
-		<PackageReference Include="FreakyControls" Version="0.4.3-pre" />
-		<PackageReference Include="CommunityToolkit.Maui" Version="5.0.0" />
+		<PackageReference Include="FreakyControls" Version="0.4.7" />
+		<PackageReference Include="CommunityToolkit.Maui" Version="6.0.0" />
 	</ItemGroup>
 
 	<ItemGroup>

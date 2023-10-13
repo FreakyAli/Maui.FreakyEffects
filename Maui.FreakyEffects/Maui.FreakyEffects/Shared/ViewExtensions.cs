@@ -4,7 +4,6 @@
 using PlatformTouchEffects = Maui.FreakyEffects.Platforms.iOS.TouchEffect;
 #endif
 
-
 namespace Maui.FreakyEffects;
 
 internal static class ViewExtensions

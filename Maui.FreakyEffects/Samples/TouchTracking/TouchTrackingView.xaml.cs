@@ -47,6 +47,8 @@ public partial class TouchTrackingView : FreakyBaseContentPage
         {
             TouchManipulationMode = TouchManipulationMode.IsotropicScale,
             MaxFramesPerSecond = 100,
+            // TODO: Update the sample, EnableTwoFingersPanInIsotropicScaleMode must be true or order for IsotropicScale pinches to pass the IF statement in SceneGestureResponder.TouchGestureRecognizerOnPinch
+            EnableTwoFingersPanInIsotropicScaleMode = true,
         };
         _sceneGestureResponder.StartResponding();
     }
@@ -67,7 +69,6 @@ public partial class TouchTrackingView : FreakyBaseContentPage
         if (_scene == null)
         {
             InitSceneObjects();
-
         }
         SKImageInfo info = args.Info;
         SKSurface surface = args.Surface;

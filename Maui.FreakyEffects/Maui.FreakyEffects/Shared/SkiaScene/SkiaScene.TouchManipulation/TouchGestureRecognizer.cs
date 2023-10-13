@@ -25,12 +25,23 @@ public class TouchGestureRecognizer : ITouchGestureRecognizer
         switch (type)
         {
             case TouchActionType.Pressed:
-                _touchDictionary.Add(id, new TouchManipulationInfo
+                // TODO: System.ArgumentException Message = An item with the same key has already been added.Key: 1 happens after a few pinches
+                var newTouchManipulation = new TouchManipulationInfo
                 {
                     PreviousPoint = location,
                     NewPoint = location,
                     MoveCounter = 0
-                });
+                };
+
+                if (_touchDictionary.ContainsKey(id))
+                {
+                    _touchDictionary[id] = newTouchManipulation;
+                }
+                else
+                {
+                    _touchDictionary.Add(id, newTouchManipulation);
+                }
+
                 break;
 
             case TouchActionType.Moved:

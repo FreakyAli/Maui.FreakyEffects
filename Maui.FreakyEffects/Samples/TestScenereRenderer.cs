@@ -38,13 +38,11 @@ public class TestScenereRenderer : ISKSceneRenderer
                         path.CubicTo(120.020241f, 57.5737917f, 117.323748f, 56.0054182f, 114.568946f, 56f);
                         path.LineTo(71.4311121f, 56f);
                         path.Close();
-
                         path.Offset(160 * i, 160 * y);
                         canvas.DrawPath(path, paint);
                     }
                 }
             }
-
         }
     }
 }

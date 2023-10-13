@@ -9,7 +9,6 @@ using PlatformTouchEffects = Maui.FreakyEffects.Platforms.Android.TouchEffect;
 using PlatformTouchEffects = Maui.FreakyEffects.Platforms.iOS.TouchEffect;
 #endif
 
-
 namespace Maui.FreakyEffects;
 
 public static class Extensions
