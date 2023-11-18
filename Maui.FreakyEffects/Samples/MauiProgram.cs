@@ -18,21 +18,14 @@ public static class MauiProgram
                 fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                 fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
             })
-            .ConfigureMauiHandlers(handlers =>
-            {
-                handlers.AddFreakyHandlers(); // To Init your freaky handlers for Entry and Editor
-            })
             .ConfigureEffects(effects =>
             {
                 effects.InitFreakyEffects();
             });
-
-        builder.InitSkiaSharp();
-
+        builder.InitializeFreakyControls();
 #if DEBUG
         builder.Logging.AddDebug();
 #endif
-
         return builder.Build();
     }
 }
