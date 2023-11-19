@@ -209,7 +209,8 @@ public class TouchEffectPlatform : PlatformEffect
         {
             _layer.Layer.RemoveAllAnimations();
             UIView.Animate(0.225,
-            () => {
+            () =>
+            {
                 _layer.Alpha = 0;
             });
         }
@@ -320,7 +321,8 @@ public class TouchGestureRecognizer : UIGestureRecognizer
         _startCalled = false;
 
         await Task.Delay(125);
-        DispatchQueue.MainQueue.DispatchAsync(() => {
+        DispatchQueue.MainQueue.DispatchAsync(() =>
+        {
             if (!Processing || _disposed) return;
             OnTouch?.Invoke(this, new TouchArgs(TouchState.Started, true));
             _startCalled = true;

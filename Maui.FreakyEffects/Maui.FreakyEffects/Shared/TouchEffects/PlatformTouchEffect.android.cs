@@ -16,7 +16,6 @@ using Rect = Android.Graphics.Rect;
 
 namespace Maui.FreakyEffects.TouchEffects;
 
-
 public class TouchEffectPlatform : PlatformEffect
 {
     public bool EnableRipple => Build.VERSION.SdkInt >= BuildVersionCodes.Lollipop;
@@ -28,10 +27,6 @@ public class TouchEffectPlatform : PlatformEffect
     RippleDrawable _ripple;
     FrameLayout _viewOverlay;
     ObjectAnimator _animator;
-
-    public static void Init()
-    {
-    }
 
     protected override void OnAttached()
     {
