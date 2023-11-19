@@ -1,8 +1,4 @@
-﻿using System;
-using Microsoft.Maui.Controls.Shapes;
-using Microsoft.Maui.Graphics;
-using SkiaSharp;
-using static Microsoft.Maui.Controls.Internals.GIFBitmap;
+﻿using SkiaSharp;
 
 namespace Maui.FreakyEffects.SkiaScene;
 

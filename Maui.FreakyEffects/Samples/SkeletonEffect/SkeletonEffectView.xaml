@@ -5,6 +5,7 @@
              xmlns:vm="clr-namespace:Samples.SkeletonEffect"
              x:DataType="vm:SkeletonEffectViewModel"
              xmlns:views="clr-namespace:Samples"
+             xmlns:touchEffects="clr-namespace:Maui.FreakyEffects.TouchEffects;assembly=Maui.FreakyEffects"
              xmlns:freakyControls="clr-namespace:Maui.FreakyControls;assembly=Maui.FreakyControls"
              xmlns:sk="clr-namespace:Maui.FreakyEffects.Skeleton;assembly=Maui.FreakyEffects"
              BackgroundColor="{StaticResource Primary}"
@@ -372,25 +373,28 @@
                         </Grid>
                     </Border>
                 </Grid>
-                <Frame
-                    BorderColor="Transparent"
-                    IsClippedToBounds="True"
-                    CornerRadius="10"
+                <ContentView 
+                    AbsoluteLayout.LayoutBounds=".5,0.03,100,100"
+                    AbsoluteLayout.LayoutFlags="PositionProportional"
+                    touchEffects:TouchEffect.Color="Green">
+                    <Border
+                    Stroke="Transparent"
+                    StrokeThickness="0"
+                    StrokeShape="RoundRectangle 10"
                     sk:SkeletonEffect.Animation="{sk:DefaultAnimation Source=Fade, Interval='600',Parameter='0.3' }"
                     sk:SkeletonEffect.IsParent="True"
                     sk:SkeletonEffect.IsBusy="{Binding IsBusy}"
                     sk:SkeletonEffect.BackgroundColor="LightGray"
                     Padding="0"
-                    AbsoluteLayout.LayoutBounds=".5,0.03,100,100"
-                    AbsoluteLayout.LayoutFlags="PositionProportional"
                     >
-                    <freakyControls:FreakyImage
+                        <freakyControls:FreakyImage
                     sk:SkeletonEffect.IsBusy="{Binding IsBusy}"
                     sk:SkeletonEffect.Hide="True"
                     Source="{x:Static views:Constants.Profile2}"
                     Aspect="AspectFit"
                     />
-                </Frame>
+                    </Border>
+                </ContentView>
             </AbsoluteLayout>
         </ContentView>
     </ContentPage.Content>

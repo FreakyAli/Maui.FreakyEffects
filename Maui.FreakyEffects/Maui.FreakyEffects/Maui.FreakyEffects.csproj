@@ -47,12 +47,14 @@
 		<None Remove="Shared\" />
 		<None Remove="Shared\Skeleton\" />
 		<None Include="maui_toolkit.png" Pack="true" Visible="false" PackagePath="" />
+		<None Remove="Shared\TouchEffects\" />
 	</ItemGroup>
 	<ItemGroup>
 		<Folder Include="Platforms\Android\" />
 		<Folder Include="Platforms\iOS\" />
 		<Folder Include="Shared\" />
 		<Folder Include="Shared\Skeleton\" />
+		<Folder Include="Shared\TouchEffects\" />
 	</ItemGroup>
 	<ItemGroup>
 		<PackageReference Include="SkiaSharp.Views.Maui.Controls" Version="2.88.6" />
