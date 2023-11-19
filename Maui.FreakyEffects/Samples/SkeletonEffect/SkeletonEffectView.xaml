@@ -316,26 +316,26 @@
                                    Margin="20,0,20,20"
                                     >
                                     <Grid ColumnDefinitions="2*,6*,1*">
-                                        <Frame
+                                        <Border
                                         sk:SkeletonEffect.Animation="{sk:DefaultAnimation Source=Fade, Interval='600',Parameter='0.3' }"
                                         sk:SkeletonEffect.IsParent="True"
                                         sk:SkeletonEffect.IsBusy="{Binding IsBusy}"
                                         sk:SkeletonEffect.BackgroundColor="LightGray"
                                         Margin="20,10,20,10"
-                                        IsClippedToBounds="True"
-                                        CornerRadius="10"
+                                        Stroke="Transparent"
+                                        StrokeThickness="0"
+                                        StrokeShape="RoundRectangle 10"
                                         Grid.Column="0"
                                         HeightRequest="70"
                                         WidthRequest="70"
                                         Padding="0"
-                                        BorderColor="Transparent"
                                         >
                                             <freakyControls:FreakyImage
                                         sk:SkeletonEffect.IsBusy="{Binding IsBusy}"
                                         sk:SkeletonEffect.Hide="True"
                                         Source="{x:Static views:Constants.Profile2}"
                                         Aspect="AspectFit"/>
-                                        </Frame>
+                                        </Border>
 
                                         <VerticalStackLayout Margin="10" Grid.Column="1" VerticalOptions="Center">
                                             <Label
@@ -364,9 +364,7 @@
                                         VerticalOptions="Center"
                                         SvgAssembly="{x:Static views:Constants.SvgAssembly}"
                                         ResourceId="{x:Static views:Constants.PlayButton}"
-                                        ImageColor="{StaticResource Secondary}"
-                                            />
-
+                                        ImageColor="{StaticResource Secondary}"/>
                                     </Grid>
                                 </Border>
                             </Grid>
@@ -376,7 +374,7 @@
                 <ContentView 
                     AbsoluteLayout.LayoutBounds=".5,0.03,100,100"
                     AbsoluteLayout.LayoutFlags="PositionProportional"
-                    touchEffects:TouchEffect.Color="Green">
+                    touchEffects:TouchEffect.Color="{StaticResource Primary}">
                     <Border
                     Stroke="Transparent"
                     StrokeThickness="0"
