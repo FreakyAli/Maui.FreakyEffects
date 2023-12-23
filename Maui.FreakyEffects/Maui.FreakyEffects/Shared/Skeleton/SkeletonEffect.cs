@@ -1,6 +1,4 @@
-﻿using System;
-using System.ComponentModel;
-using Maui.FreakyEffects.Skeleton;
+﻿using System.ComponentModel;
 
 namespace Maui.FreakyEffects.Skeleton;
 
@@ -98,7 +96,7 @@ public static class SkeletonEffect
 
     static void HandleIsBusyChanged(BindableObject bindable, bool isBusyNewValue)
     {
-        if (!(bindable is View))
+        if (bindable is not View)
             return;
 
         var view = (View)bindable;
