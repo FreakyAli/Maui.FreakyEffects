@@ -15,9 +15,9 @@ public partial class SkeletonEffectView : FreakyBaseContentPage
         viewModel.IsBusy = true;
         timer = new Timer
         {
-            Interval = 10000
+            Interval = 5000,
+            AutoReset = false
         };
-        timer.AutoReset = false;
         timer.Elapsed += Timer_Elapsed;
         timer.Start();
     }
