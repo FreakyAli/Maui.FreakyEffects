@@ -1,4 +1,4 @@
-﻿using CommunityToolkit.Maui;
+using CommunityToolkit.Maui;
 using Maui.FreakyControls.Extensions;
 using Maui.FreakyEffects;
 

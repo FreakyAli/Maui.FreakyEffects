@@ -1,4 +1,4 @@
-﻿namespace Maui.FreakyEffects.TouchTracking;
+namespace Maui.FreakyEffects.TouchTracking;
 
 public class TouchHandlerBase<TElement>
 {
