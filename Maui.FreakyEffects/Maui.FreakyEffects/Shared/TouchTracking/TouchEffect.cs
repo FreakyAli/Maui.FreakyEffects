@@ -1,5 +1,4 @@
-﻿using System;
-namespace Maui.FreakyEffects.TouchTracking;
+﻿namespace Maui.FreakyEffects.TouchTracking;
 
 public delegate void TouchActionEventHandler(object sender, TouchActionEventArgs args);
 

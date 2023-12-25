@@ -15,7 +15,9 @@ public class TouchHandlerBase<TElement>
         TouchAction?.Invoke(element, args);
     }
 
-    public virtual void RegisterEvents(TElement element) { }
+    public virtual void RegisterEvents(TElement element)
+    { }
 
-    public virtual void UnregisterEvents(TElement element) { }
+    public virtual void UnregisterEvents(TElement element)
+    { }
 }

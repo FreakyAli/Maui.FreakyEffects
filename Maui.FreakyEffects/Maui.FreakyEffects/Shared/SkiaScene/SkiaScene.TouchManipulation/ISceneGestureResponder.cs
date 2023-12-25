@@ -1,14 +1,11 @@
-﻿using System;
-using Maui.FreakyEffects.SkiaScene;
-using Maui.FreakyEffects.TouchTracking;
-using SkiaSharp;
-
-namespace Maui.FreakyEffects.SkiaScene.TouchManipulation;
+﻿namespace Maui.FreakyEffects.SkiaScene.TouchManipulation;
 
 public interface ISceneGestureResponder
 {
     TouchManipulationMode TouchManipulationMode { get; set; }
+
     void StartResponding();
+
     void StopResponding();
 }
 

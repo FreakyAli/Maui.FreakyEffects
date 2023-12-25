@@ -6,8 +6,8 @@
     xmlns:freakyEffects="clr-namespace:Maui.FreakyEffects.TouchTracking;assembly=Maui.FreakyEffects"
     xmlns:skia="clr-namespace:SkiaSharp.Views.Maui.Controls;assembly=SkiaSharp.Views.Maui.Controls"
     xmlns:view="clr-namespace:Samples"
+    BackButtonCommand="{Binding BackButtonCommand}"
     BackgroundColor="{StaticResource Primary}"
-    BackButtonCommand= "{Binding BackButtonCommand}"
     HeaderText="Touch tracking">
     <ContentView x:Name="template" ControlTemplate="{StaticResource HeaderControlTemplate}">
         <Grid BackgroundColor="White">
@@ -17,9 +17,9 @@
                 PaintSurface="OnPaint" />
             <Grid.Effects>
                 <freakyEffects:TouchEffect
-                x:Name="touchEffect"
-                Capture="True"
-                TouchAction="OnTouchEffectAction" />
+                    x:Name="touchEffect"
+                    Capture="True"
+                    TouchAction="OnTouchEffectAction" />
             </Grid.Effects>
         </Grid>
     </ContentView>
