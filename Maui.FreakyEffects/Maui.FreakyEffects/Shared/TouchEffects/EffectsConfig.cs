@@ -15,7 +15,8 @@ public static class EffectsConfig
             typeof(bool),
             typeof(EffectsConfig),
             false,
-            propertyChanged: (bindable, oldValue, newValue) => {
+            propertyChanged: (bindable, oldValue, newValue) =>
+            {
                 ConfigureChildrenInputTransparent(bindable);
             }
         );
@@ -30,7 +31,7 @@ public static class EffectsConfig
         return (bool)view.GetValue(ChildrenInputTransparentProperty);
     }
 
-    static void ConfigureChildrenInputTransparent(BindableObject bindable)
+    private static void ConfigureChildrenInputTransparent(BindableObject bindable)
     {
         if (!(bindable is Layout layout))
             return;
@@ -47,12 +48,12 @@ public static class EffectsConfig
         }
     }
 
-    static void Layout_ChildAdded(object sender, ElementEventArgs e)
+    private static void Layout_ChildAdded(object sender, ElementEventArgs e)
     {
         AddInputTransparentToElement(e.Element);
     }
 
-    static void AddInputTransparentToElement(BindableObject obj)
+    private static void AddInputTransparentToElement(BindableObject obj)
     {
         if (obj is View view && TouchEffect.GetColor(view) == Colors.Transparent && Commands.GetTap(view) == null && Commands.GetLongTap(view) == null)
         {

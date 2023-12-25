@@ -1,16 +1,15 @@
-﻿
-namespace Maui.FreakyEffects.TouchEffects;
+﻿namespace Maui.FreakyEffects.TouchEffects;
 
 public static class TouchEffect
 {
-     public static readonly BindableProperty ColorProperty =
-        BindableProperty.CreateAttached(
-            "Color",
-            typeof(Color),
-            typeof(TouchEffect),
-            Colors.Transparent,
-            propertyChanged: PropertyChanged
-        );
+    public static readonly BindableProperty ColorProperty =
+       BindableProperty.CreateAttached(
+           "Color",
+           typeof(Color),
+           typeof(TouchEffect),
+           Colors.Transparent,
+           propertyChanged: PropertyChanged
+       );
 
     public static void SetColor(BindableObject view, Color value)
     {
@@ -22,7 +21,7 @@ public static class TouchEffect
         return (Color)view.GetValue(ColorProperty);
     }
 
-    static void PropertyChanged(BindableObject bindable, object oldValue, object newValue)
+    private static void PropertyChanged(BindableObject bindable, object oldValue, object newValue)
     {
         if (!(bindable is View view))
             return;

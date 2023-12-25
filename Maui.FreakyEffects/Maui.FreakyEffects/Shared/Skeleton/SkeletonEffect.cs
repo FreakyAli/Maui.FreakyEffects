@@ -94,7 +94,7 @@ public static class SkeletonEffect
         }
     }
 
-    static void HandleIsBusyChanged(BindableObject bindable, bool isBusyNewValue)
+    private static void HandleIsBusyChanged(BindableObject bindable, bool isBusyNewValue)
     {
         if (bindable is not View)
             return;

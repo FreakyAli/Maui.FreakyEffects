@@ -1,10 +1,16 @@
-﻿using Maui.FreakyEffects.TouchTracking;
-using Maui.FreakyEffects.TouchEffects;
+﻿using Maui.FreakyEffects.TouchEffects;
 using TouchEffect = Maui.FreakyEffects.TouchTracking.TouchEffect;
+
 #if ANDROID
+
 using PlatformTouchEffects = Maui.FreakyEffects.Platforms.Android.TouchEffect;
+
 #elif IOS
 using PlatformTouchEffects = Maui.FreakyEffects.Platforms.iOS.TouchEffect;
+#elif MACCATALYST
+using Maui.FreakyEffects.Platforms.MacCatalyst;
+#elif WINDOWS
+using Maui.FreakyEffects.Platforms.Windows;
 #endif
 
 namespace Maui.FreakyEffects;

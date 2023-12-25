@@ -7,7 +7,7 @@ namespace Maui.FreakyEffects.Platforms.iOS;
 
 class TouchRecognizer : UIGestureRecognizer
 {
-    private readonly UIView _view;            // iOS UIView 
+    private readonly UIView _view;            // iOS UIView
     private readonly TouchHandler _touchHandler;
     bool _capture;
 

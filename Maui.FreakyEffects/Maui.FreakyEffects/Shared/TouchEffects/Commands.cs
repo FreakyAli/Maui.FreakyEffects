@@ -84,7 +84,7 @@ public static class Commands
         return view.GetValue(LongTapParameterProperty);
     }
 
-    static void PropertyChanged(BindableObject bindable, object oldValue, object newValue)
+    private static void PropertyChanged(BindableObject bindable, object oldValue, object newValue)
     {
         if (!(bindable is View view))
             return;

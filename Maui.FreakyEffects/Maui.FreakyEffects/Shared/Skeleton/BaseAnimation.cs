@@ -1,6 +1,4 @@
-﻿using System.ComponentModel;
-
-namespace Maui.FreakyEffects.Skeleton;
+﻿namespace Maui.FreakyEffects.Skeleton;
 
 public abstract class BaseAnimation : IAnimation
 {
@@ -8,6 +6,7 @@ public abstract class BaseAnimation : IAnimation
     public double Parameter { get; set; }
 
     protected abstract Task<bool> Animate(BindableObject bindable);
+
     protected abstract Task StopAnimation(BindableObject bindable);
 
     public void Start(BindableObject bindable)

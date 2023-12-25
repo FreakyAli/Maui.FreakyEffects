@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.ObjectModel;
-using System.Runtime.CompilerServices;
+﻿using System.Collections.ObjectModel;
 using System.Windows.Input;
 
 namespace Samples;
@@ -12,7 +10,7 @@ public class MainViewModel : FreakyBaseViewModel
         get; set;
     }
 
-    ObservableCollection<string> _suggestionItem;
+    private ObservableCollection<string> _suggestionItem;
     private ObservableCollection<string> items;
 
     public ObservableCollection<string> SuggestionItem
