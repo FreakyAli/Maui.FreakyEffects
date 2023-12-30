@@ -9,15 +9,20 @@ public class TouchGestureRecognizer : ITouchGestureRecognizer
 
     private readonly Dictionary<long, TouchManipulationInfo> _touchDictionary =
         new Dictionary<long, TouchManipulationInfo>();
+
     protected DateTime LastTapTime = DateTime.MinValue;
     protected DateTime LastDoubleTapTime = DateTime.MinValue;
     protected TimeSpan DoubleTapDelay = TimeSpan.FromMilliseconds(320);
     private Timer _timer;
 
     public event TapEventHandler OnTap;
+
     public event TapEventHandler OnDoubleTap;
+
     public event TapEventHandler OnSingleTap;
+
     public event PinchEventHandler OnPinch;
+
     public event PanEventHandler OnPan;
 
     public void ProcessTouchEvent(long id, TouchActionType type, SKPoint location)

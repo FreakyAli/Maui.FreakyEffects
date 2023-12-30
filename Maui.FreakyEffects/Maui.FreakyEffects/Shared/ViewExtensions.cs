@@ -1,4 +1,5 @@
 ﻿using Microsoft.Maui.Controls.Internals;
+
 #if ANDROID
 #elif IOS
 using PlatformTouchEffects = Maui.FreakyEffects.Platforms.iOS.TouchEffect;
@@ -67,7 +68,7 @@ internal static class ViewExtensions
         return null;
     }
 
-    #endregion
+    #endregion Internal Methods
 
     #region Private Methods
 
@@ -82,5 +83,5 @@ internal static class ViewExtensions
     private static object GetValueFromPropertyName(object view, string propertyToCheck) =>
         view.GetType().GetProperty(propertyToCheck).GetValue(view);
 
-    #endregion
+    #endregion Private Methods
 }

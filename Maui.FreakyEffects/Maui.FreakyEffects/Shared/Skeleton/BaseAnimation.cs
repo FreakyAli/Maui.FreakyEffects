@@ -1,6 +1,4 @@
-﻿using System.ComponentModel;
-
-namespace Maui.FreakyEffects.Skeleton;
+﻿namespace Maui.FreakyEffects.Skeleton;
 
 public abstract class BaseAnimation : IAnimation
 {
