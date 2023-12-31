@@ -19,8 +19,8 @@ public static class Extensions
 {
     public static void InitFreakyEffects(this IEffectsBuilder effects)
     {
-        effects.Add<TouchEffect, PlatformTouchEffects>();
         effects.Add<TouchRoutingEffect, TouchEffectPlatform>();
+        effects.Add<TouchEffect, PlatformTouchEffects>();
         effects.Add<CommandsRoutingEffect, CommandsPlatform>();
     }
 }

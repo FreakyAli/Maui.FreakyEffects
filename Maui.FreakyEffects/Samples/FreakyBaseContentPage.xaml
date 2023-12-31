@@ -5,6 +5,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:constants="clr-namespace:Samples"
     xmlns:controls="clr-namespace:Maui.FreakyControls;assembly=Maui.FreakyControls"
+    xmlns:touchEffects="clr-namespace:Maui.FreakyEffects.TouchEffects;assembly=Maui.FreakyEffects"
     xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
     x:Name="this"
     BackgroundColor="{StaticResource Primary}">
@@ -30,30 +31,32 @@
                             <RowDefinition Height="7*" />
                             <RowDefinition Height="93*" />
                         </Grid.RowDefinitions>
-                        <Border
+                        <ContentView
+                            touchEffects:TouchEffect.Color="{StaticResource Ripple}"
+                            touchEffects:Commands.Tap="{TemplateBinding Parent.BackButtonCommand}"
                             Grid.Row="0"
-                            Grid.Column="0"
                             Margin="15,0,0,0"
+                            Grid.Column="0">
+                            <Border
                             BackgroundColor="{StaticResource Tertiary}"
                             HeightRequest="30"
+                            InputTransparent="True"
                             HorizontalOptions="Start"
                             IsVisible="{TemplateBinding Parent.IsBackButtonVisible}"
                             StrokeThickness="0"
                             VerticalOptions="Center"
                             WidthRequest="30">
-                            <Border.GestureRecognizers>
-                                <TapGestureRecognizer Command="{TemplateBinding Parent.BackButtonCommand}" />
-                            </Border.GestureRecognizers>
-                            <Border.StrokeShape>
-                                <RoundRectangle CornerRadius="5" />
-                            </Border.StrokeShape>
-                            <controls:FreakySvgImageView
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="5" />
+                                </Border.StrokeShape>
+                                <controls:FreakySvgImageView
                                 ImageColor="White"
                                 InputTransparent="True"
                                 ResourceId="{x:Static constants:Constants.BackButton}"
                                 SvgAssembly="{x:Static constants:Constants.SvgAssembly}"
                                 SvgMode="AspectFit" />
-                        </Border>
+                            </Border>
+                        </ContentView>
                         <Label
                             Grid.Row="0"
                             Grid.Column="1"
@@ -64,9 +67,12 @@
                             Text="{TemplateBinding Parent.HeaderText}"
                             TextColor="{TemplateBinding Parent.HeaderTextColor}"
                             VerticalOptions="Center" />
-                        <Border
+                        <ContentView
+                            touchEffects:TouchEffect.Color="{StaticResource Ripple}"
                             Grid.Row="0"
                             Grid.Column="2"
+                            >
+                            <Border
                             Margin="0,0,15,0"
                             BackgroundColor="{StaticResource Tertiary}"
                             HeightRequest="30"
@@ -75,15 +81,16 @@
                             StrokeThickness="0"
                             VerticalOptions="Center"
                             WidthRequest="30">
-                            <Border.StrokeShape>
-                                <RoundRectangle CornerRadius="5" />
-                            </Border.StrokeShape>
-                            <controls:FreakySvgImageView
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="5" />
+                                </Border.StrokeShape>
+                                <controls:FreakySvgImageView
                                 ImageColor="White"
                                 ResourceId="{x:Static constants:Constants.MeatballMenu}"
                                 SvgAssembly="{x:Static constants:Constants.SvgAssembly}"
                                 SvgMode="AspectFit" />
-                        </Border>
+                            </Border>
+                        </ContentView>
                         <ContentPresenter
                             Grid.Row="1"
                             Grid.ColumnSpan="3"

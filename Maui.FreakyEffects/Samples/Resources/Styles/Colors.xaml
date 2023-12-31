@@ -6,6 +6,7 @@
     <Color x:Key="Secondary">#FFF</Color>
     <Color x:Key="Tertiary">#2E2D2B</Color>
     <Color x:Key="Quarternary">#F5F5F5</Color>
+    <Color x:Key="Ripple">#40000000</Color>
 
     <Color x:Key="White">White</Color>
     <Color x:Key="Black">Black</Color>

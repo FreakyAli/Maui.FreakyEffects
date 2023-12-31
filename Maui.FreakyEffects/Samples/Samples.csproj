@@ -57,9 +57,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="FreakyControls" Version="0.4.9-pre" />
-		<PackageReference Include="CommunityToolkit.Maui" Version="7.0.0" />
+		<PackageReference Include="CommunityToolkit.Maui" Version="7.0.1" />
 		<PackageReference Include="Microsoft.Maui.Controls" Version="8.0.3" />
+		<PackageReference Include="FreakyControls" Version="0.4.9-pre" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -68,10 +68,12 @@
 	<ItemGroup>
 	  <None Remove="SkeletonEffect\" />
 	  <None Remove="TouchTracking\" />
+	  <None Remove="ClickEffects\" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="SkeletonEffect\" />
 	  <Folder Include="TouchTracking\" />
+	  <Folder Include="ClickEffects\" />
 	</ItemGroup>
 	<ItemGroup>
 	  <EmbeddedResource Include="Resources\Images\meatball_icon.svg" />

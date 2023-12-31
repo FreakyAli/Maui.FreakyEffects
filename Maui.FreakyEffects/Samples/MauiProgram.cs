@@ -1,7 +1,6 @@
 using CommunityToolkit.Maui;
-using Maui.FreakyControls.Extensions;
 using Maui.FreakyEffects;
-
+using Maui.FreakyControls.Extensions;
 namespace Samples;
 
 public static class MauiProgram
