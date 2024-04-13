@@ -2,15 +2,15 @@
 using TouchEffect = Maui.FreakyEffects.TouchTracking.TouchEffect;
 
 #if ANDROID
-
 using PlatformTouchEffects = Maui.FreakyEffects.Platforms.Android.TouchEffect;
-
 #elif IOS
 using PlatformTouchEffects = Maui.FreakyEffects.Platforms.iOS.TouchEffect;
 #elif MACCATALYST
 using Maui.FreakyEffects.Platforms.MacCatalyst;
 #elif WINDOWS
 using Maui.FreakyEffects.Platforms.Windows;
+#else
+using Maui.FreakyEffects.Platforms.Dotnet;
 #endif
 
 namespace Maui.FreakyEffects;
