@@ -24,6 +24,7 @@ public class SceneGestureResponder : ISceneGestureResponder
         _touchGestureRecognizer.OnPinch += TouchGestureRecognizerOnPinch;
         _touchGestureRecognizer.OnDoubleTap += TouchGestureRecognizerOnDoubleTap;
     }
+
     public void StopResponding()
     {
         _touchGestureRecognizer.OnPan -= TouchGestureRecognizerOnPan;

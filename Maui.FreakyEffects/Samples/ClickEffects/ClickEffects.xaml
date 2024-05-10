@@ -1,0 +1,333 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:FreakyBaseContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Samples.ClickEffects.ClickEffects"
+             xmlns:clickeffects="clr-namespace:Samples.ClickEffects"
+             x:DataType="clickeffects:ClickEffectsViewModel"
+             xmlns:views="clr-namespace:Samples"
+             xmlns:freakyControls="clr-namespace:Maui.FreakyControls;assembly=Maui.FreakyControls"
+             xmlns:touchEffects="clr-namespace:Maui.FreakyEffects.TouchEffects;assembly=Maui.FreakyEffects"
+             BackButtonCommand="{Binding BackButtonCommand}"
+             HeaderText="Click effects">
+    <ContentView x:Name="template" ControlTemplate="{StaticResource HeaderControlTemplate}">
+        <AbsoluteLayout BackgroundColor="{StaticResource Primary}">
+            <Grid
+                    AbsoluteLayout.LayoutBounds="0,0,1,1"
+                    AbsoluteLayout.LayoutFlags="All"
+                    BackgroundColor="{StaticResource Secondary}"
+                    ColumnSpacing="0"
+                    RowDefinitions="75,*,2*"
+                    RowSpacing="30">
+                <Border
+                        Margin="{OnPlatform Android='-2,-2,-2,0',
+                                            iOS='-1,-1,-1,0'}"
+                        BackgroundColor="{StaticResource Primary}"
+                        Stroke="{StaticResource Primary}"
+                        StrokeShape="RoundRectangle 0,0,30,30" />
+                <VerticalStackLayout
+                        Grid.Row="1"
+                        Margin="0,30,0,0"
+                        BackgroundColor="{StaticResource Secondary}"
+                        Spacing="5">
+
+                    <VerticalStackLayout
+                        touchEffects:TouchEffect.Color="{StaticResource Ripple}"
+                        >
+                        <Label
+                            FontAttributes="Bold"
+                            FontSize="Title"
+                            HorizontalOptions="Center"
+                            HorizontalTextAlignment="Center"
+                            Text="Gulam Ali Hakim" />
+                        <Label
+                            FontSize="Small"
+                            HorizontalOptions="Center"
+                            HorizontalTextAlignment="Center"
+                            Text=".Net Developer!"
+                            TextColor="Gray" />
+                    </VerticalStackLayout>
+
+                    <Grid
+                            Margin="30,10,30,0"
+                            ColumnDefinitions="*,*"
+                            ColumnSpacing="30">
+                        <Button
+                                Grid.Column="0"
+                                ImageSource="briefcase.png"
+                                Style="{StaticResource PrimaryButtonStyle}"
+                                Text="Hire Me!" />
+                        <Button
+                                Grid.Column="1"
+                                Style="{StaticResource SecondaryButtonStyle}"
+                                Text="Follow" />
+                    </Grid>
+
+                    <Grid
+                            Margin="50,10,50,0"
+                            ColumnDefinitions="*,*,*"
+                            ColumnSpacing="30">
+                        <VerticalStackLayout Grid.Column="0" Spacing="5">
+                            <Label
+                                    HorizontalTextAlignment="Center"
+                                    Text="Students"
+                                    TextColor="Gray" />
+                            <HorizontalStackLayout HorizontalOptions="Center">
+                                <freakyControls:FreakyCircularImage
+                                        Aspect="AspectFill"
+                                        HeightRequest="20"
+                                        Source="{x:Static views:Constants.Profile}"
+                                        WidthRequest="20" />
+                                <freakyControls:FreakyCircularImage
+                                        Aspect="AspectFill"
+                                        HeightRequest="20"
+                                        Source="{x:Static views:Constants.Profile1}"
+                                        WidthRequest="20" />
+                                <freakyControls:FreakyCircularImage
+                                        Aspect="AspectFill"
+                                        HeightRequest="20"
+                                        Source="{x:Static views:Constants.Profile3}"
+                                        WidthRequest="20" />
+                                <Label
+                                        FontAttributes="Bold"
+                                        HorizontalTextAlignment="Start"
+                                        Text="310" />
+                            </HorizontalStackLayout>
+                        </VerticalStackLayout>
+
+                        <VerticalStackLayout Grid.Column="1" Spacing="5">
+                            <Label
+                                    HorizontalTextAlignment="Center"
+                                    Text="Content"
+                                    TextColor="Gray" />
+                            <HorizontalStackLayout HorizontalOptions="Center">
+                                <freakyControls:FreakyCircularImage
+                                        Aspect="AspectFill"
+                                        HeightRequest="20"
+                                        Source="{x:Static views:Constants.Profile}"
+                                        WidthRequest="20" />
+                                <freakyControls:FreakyCircularImage
+                                        Aspect="AspectFill"
+                                        HeightRequest="20"
+                                        Source="{x:Static views:Constants.Profile1}"
+                                        WidthRequest="20" />
+                                <freakyControls:FreakyCircularImage
+                                        Aspect="AspectFill"
+                                        HeightRequest="20"
+                                        Source="{x:Static views:Constants.Profile3}"
+                                        WidthRequest="20" />
+                                <Label
+                                        FontAttributes="Bold"
+                                        HorizontalTextAlignment="Center"
+                                        Text="1.2M" />
+                            </HorizontalStackLayout>
+                        </VerticalStackLayout>
+
+                        <VerticalStackLayout Grid.Column="2" Spacing="5">
+                            <Label
+                                    HorizontalTextAlignment="Center"
+                                    Text="Followers"
+                                    TextColor="Gray" />
+                            <HorizontalStackLayout HorizontalOptions="Center">
+                                <freakyControls:FreakyCircularImage
+                                        Aspect="AspectFill"
+                                        HeightRequest="20"
+                                        Source="{x:Static views:Constants.Profile}"
+                                        WidthRequest="20" />
+                                <freakyControls:FreakyCircularImage
+                                        Aspect="AspectFill"
+                                        HeightRequest="20"
+                                        Source="{x:Static views:Constants.Profile1}"
+                                        WidthRequest="20" />
+                                <freakyControls:FreakyCircularImage
+                                        Aspect="AspectFill"
+                                        HeightRequest="20"
+                                        Source="{x:Static views:Constants.Profile3}"
+                                        WidthRequest="20" />
+                                <Label
+                                        FontAttributes="Bold"
+                                        HorizontalTextAlignment="Center"
+                                        Text="35" />
+                            </HorizontalStackLayout>
+                        </VerticalStackLayout>
+                    </Grid>
+                </VerticalStackLayout>
+                <Border
+                        Grid.Row="2"
+                        Margin="{OnPlatform Android='-2,-2,-2,-2',
+                                            iOS='-1,-1,-1,-1'}"
+                        BackgroundColor="{StaticResource Primary}"
+                        Stroke="{StaticResource Primary}"
+                        StrokeShape="RoundRectangle 30,30,0,0">
+                    <Grid Padding="10,10,10,0" RowDefinitions="Auto,*,Auto">
+
+                        <Grid
+                                Grid.Row="0"
+                                Margin="30,10,30,0"
+                                BackgroundColor="{StaticResource Tertiary}"
+                                ColumnDefinitions="*,*,*">
+                            <Button
+                                    Grid.Column="0"
+                                    Style="{StaticResource TernaryButtonStyle}"
+                                    Text="Courses" />
+                            <Button
+                                    Grid.Column="1"
+                                    Style="{StaticResource QuarternaryButtonStyle}"
+                                    Text="Content" />
+                            <Button
+                                    Grid.Column="2"
+                                    Style="{StaticResource QuarternaryButtonStyle}"
+                                    Text="Reviews" />
+                        </Grid>
+
+                        <Border
+                                Grid.Row="1"
+                                Margin="20"
+                                BackgroundColor="{StaticResource Tertiary}"
+                                Stroke="{StaticResource Tertiary}"
+                                StrokeShape="RoundRectangle 20,20,20,20">
+                            <Grid BackgroundColor="{StaticResource Secondary}" RowDefinitions="Auto,*, Auto">
+                                <Grid
+                                        Grid.Row="0"
+                                        Padding="15,15,0,0"
+                                        ColumnDefinitions="2*, 8*"
+                                        ColumnSpacing="10"
+                                        VerticalOptions="Start">
+                                    <ContentView
+                                        touchEffects:TouchEffect.Color="{StaticResource Ripple}"
+                                        Grid.Column="0">
+                                        <Border
+                                            Margin="0,0,0,0"
+                                            BackgroundColor="{StaticResource Tertiary}"
+                                            HeightRequest="40"
+                                            InputTransparent="True"
+                                            StrokeThickness="0"
+                                            VerticalOptions="Start"
+                                            WidthRequest="40">
+                                            <Border.StrokeShape>
+                                                <RoundRectangle CornerRadius="5" />
+                                            </Border.StrokeShape>
+                                            <freakyControls:FreakySvgImageView
+                                                HeightRequest="30"
+                                                ImageColor="White"
+                                                ResourceId="{x:Static views:Constants.BarChart}"
+                                                SvgAssembly="{x:Static views:Constants.SvgAssembly}"
+                                                SvgMode="AspectFit"
+                                                WidthRequest="30" />
+                                        </Border>
+                                    </ContentView>
+                                    <VerticalStackLayout
+                                        touchEffects:TouchEffect.Color="{StaticResource Ripple}"
+                                        Grid.Column="1"
+                                        VerticalOptions="Start">
+                                        <Label
+                                                FontAttributes="Bold"
+                                                FontSize="Medium"
+                                                Text="Become a UI Designer" />
+                                        <Label
+                                                FontSize="Micro"
+                                                Text="Learn all the skills you need"
+                                                TextColor="Gray" />
+                                    </VerticalStackLayout>
+                                </Grid>
+
+                                <Grid
+                                        Grid.Row="2"
+                                        Margin="30"
+                                        ColumnDefinitions="2*,2*,2*,4*"
+                                        ColumnSpacing="10"
+                                        VerticalOptions="End">
+                                    <Button
+                                            Grid.Column="0"
+                                            FontSize="Micro"
+                                            Style="{StaticResource PrimaryButtonStyle}"
+                                            Text="21k"
+                                            VerticalOptions="End" />
+                                    <Button
+                                            Grid.Column="1"
+                                            FontSize="Micro"
+                                            Style="{StaticResource PrimaryButtonStyle}"
+                                            Text="4.6"
+                                            VerticalOptions="End" />
+                                    <Button
+                                            Grid.Column="3"
+                                            BackgroundColor="#C9AA96"
+                                            Text="$120.00"
+                                            TextColor="Black" />
+                                </Grid>
+                            </Grid>
+                        </Border>
+
+                        <Grid
+                            Grid.Row="2"
+                            RowDefinitions="*,Auto"
+                            VerticalOptions="End">
+                            <Border
+                                    Margin="20,0,20,20"
+                                    BackgroundColor="{StaticResource Tertiary}"
+                                    Stroke="{StaticResource Tertiary}"
+                                    StrokeShape="RoundRectangle 20,20,20,20">
+                                <Grid
+                                    touchEffects:TouchEffect.Color="{StaticResource Ripple}"
+                                    ColumnDefinitions="2*,6*,1*">
+                                    <Border
+                                            Grid.Column="0"
+                                            Margin="20,10,20,10"
+                                            Padding="0"
+                                            HeightRequest="70"
+                                            Stroke="Transparent"
+                                            StrokeShape="RoundRectangle 10"
+                                            StrokeThickness="0"
+                                            WidthRequest="70">
+                                        <freakyControls:FreakyImage
+                                                Aspect="AspectFit"
+                                                Source="{x:Static views:Constants.Profile2}" />
+                                    </Border>
+
+                                    <VerticalStackLayout
+                                            Grid.Column="1"
+                                            Margin="10"
+                                            VerticalOptions="Center">
+                                        <Label
+                                                FontAttributes="Bold"
+                                                FontSize="Medium"
+                                                Text="Video Introduction"
+                                                TextColor="{StaticResource Secondary}" />
+                                        <Label
+                                                FontSize="Small"
+                                                Text="2m"
+                                                TextColor="{StaticResource Secondary}" />
+                                    </VerticalStackLayout>
+
+                                    <freakyControls:FreakySvgImageView
+                                            Grid.Column="2"
+                                            Margin="0,0,10,0"
+                                            HeightRequest="30"
+                                            ImageColor="{StaticResource Secondary}"
+                                            ResourceId="{x:Static views:Constants.PlayButton}"
+                                            SvgAssembly="{x:Static views:Constants.SvgAssembly}"
+                                            VerticalOptions="Center"
+                                            WidthRequest="30" />
+                                </Grid>
+                            </Border>
+                        </Grid>
+                    </Grid>
+                </Border>
+            </Grid>
+            <ContentView
+                    touchEffects:TouchEffect.Color="{StaticResource Ripple}"
+                    AbsoluteLayout.LayoutBounds=".5,0.03,100,100"
+                    AbsoluteLayout.LayoutFlags="PositionProportional">
+                <Border
+                        Padding="0"
+                        Stroke="Transparent"
+                        StrokeShape="RoundRectangle 10"
+                        StrokeThickness="0">
+                    <freakyControls:FreakyImage
+                            Aspect="AspectFit"
+                            Source="{x:Static views:Constants.Profile2}" />
+                </Border>
+            </ContentView>
+        </AbsoluteLayout>
+    </ContentView>
+
+</views:FreakyBaseContentPage>

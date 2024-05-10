@@ -32,7 +32,7 @@ public class BaseAnimationTypeConverter : TypeConverter
         //        valueAsString[embeddedResourcePrefix.Length..]);
         //}
         //else if (valueAsStringLowercase.StartsWith(fileSystemPrefix))
-        //{ 
+        //{
         //    return MediaSource.FromFile(valueAsString[fileSystemPrefix.Length..]);
         //}
 

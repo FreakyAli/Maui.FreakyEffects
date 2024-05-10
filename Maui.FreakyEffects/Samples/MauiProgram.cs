@@ -1,7 +1,6 @@
-﻿using Microsoft.Extensions.Logging;
+using CommunityToolkit.Maui;
 using Maui.FreakyEffects;
 using Maui.FreakyControls.Extensions;
-using CommunityToolkit.Maui;
 
 namespace Samples;
 
@@ -24,11 +23,6 @@ public static class MauiProgram
             });
 
         builder.InitializeFreakyControls();
-
-#if DEBUG
-        builder.Logging.AddDebug();
-#endif
-
         return builder.Build();
     }
 }

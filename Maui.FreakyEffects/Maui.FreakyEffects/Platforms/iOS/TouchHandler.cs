@@ -1,5 +1,4 @@
-﻿using System;
-using Maui.FreakyEffects.TouchTracking;
+﻿using Maui.FreakyEffects.TouchTracking;
 using UIKit;
 
 namespace Maui.FreakyEffects.Platforms.iOS;

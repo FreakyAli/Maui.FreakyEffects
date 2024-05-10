@@ -1,4 +1,4 @@
-﻿namespace Maui.FreakyEffects.TouchTracking;
+namespace Maui.FreakyEffects.TouchTracking;
 
 public class TouchHandlerBase<TElement>
 {
@@ -15,7 +15,9 @@ public class TouchHandlerBase<TElement>
         TouchAction?.Invoke(element, args);
     }
 
-    public virtual void RegisterEvents(TElement element) { }
+    public virtual void RegisterEvents(TElement element)
+    { }
 
-    public virtual void UnregisterEvents(TElement element) { }
+    public virtual void UnregisterEvents(TElement element)
+    { }
 }

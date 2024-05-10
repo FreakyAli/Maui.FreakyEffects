@@ -5,7 +5,7 @@ namespace Maui.FreakyEffects.Platforms.Android;
 
 public static class ContextExtensions
 {
-    static float _displayDensity = float.MinValue;
+    private static float _displayDensity = float.MinValue;
 
     public static double FromPixels(this Context self, double pixels)
     {
@@ -13,7 +13,7 @@ public static class ContextExtensions
         return pixels / _displayDensity;
     }
 
-    static void SetupMetrics(Context context)
+    private static void SetupMetrics(Context context)
     {
         if (_displayDensity != float.MinValue)
         {
