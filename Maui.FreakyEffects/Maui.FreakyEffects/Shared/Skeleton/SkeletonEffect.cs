@@ -187,7 +187,7 @@ public static class SkeletonEffect
         }
         else if (backgroundColor != default(Color))
         {
-            view.BackgroundColor = GetOriginalBackgroundColor(view);
+            view.BackgroundColor = GetOriginalBackgroundColor(view) ?? Colors.Transparent;
         }
     }
 
