@@ -21,8 +21,7 @@ public static class MauiProgram
             {
                 effects.InitFreakyEffects();
             });
-
-        builder.InitializeFreakyControls();
+        builder.InitializeFreakyControls(useFreakyEffects: false);
         return builder.Build();
     }
 }

@@ -12,9 +12,9 @@
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
 		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
 		<RootNamespace>Maui.FreakyEffects</RootNamespace>
-		<AssemblyVersion>0.1.1</AssemblyVersion>
-		<AssemblyFileVersion>0.1.1</AssemblyFileVersion>
-		<Version>0.1.1</Version>
+		<AssemblyVersion>0.1.2</AssemblyVersion>
+		<AssemblyFileVersion>0.1.2</AssemblyFileVersion>
+		<Version>0.1.2</Version>
 		<NeutralLanguage>en</NeutralLanguage>
 		<!--Version of C# to use -->
 		<PackageId>FreakyEffects</PackageId>
