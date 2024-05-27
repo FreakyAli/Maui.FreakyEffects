@@ -16,16 +16,6 @@
         <ResourceDictionary>
             <ControlTemplate x:Key="HeaderControlTemplate">
                 <AbsoluteLayout>
-                    <Border 
-                    BackgroundColor="{Binding IconBackgroundColor,Source={x:Reference this}}"
-                    StrokeShape="RoundRectangle 50"
-                    StrokeThickness="0">
-                        <Image Source="{Binding IconName,Source={x:Reference this}}"
-                   Aspect="AspectFit"
-                   HeightRequest="{Binding IconHeightRequest,Source={x:Reference this}}"
-                   HorizontalOptions="Center"
-                   VerticalOptions="Center" />
-                    </Border>
                     <Grid
                         AbsoluteLayout.LayoutBounds="0,0,1,1"
                         AbsoluteLayout.LayoutFlags="All"
