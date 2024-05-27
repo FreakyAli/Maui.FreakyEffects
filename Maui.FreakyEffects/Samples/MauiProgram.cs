@@ -21,8 +21,7 @@ public static class MauiProgram
                 //this is throwing an exception: An item with the same key has already been added. Key: Maui.FreakyEffects.TouchEffects.TouchRoutingEffect'
                 //effects.InitFreakyEffects();
             });
-
-        builder.InitializeFreakyControls();
+        builder.InitializeFreakyControls(useFreakyEffects: false);
         return builder.Build();
     }
 }
