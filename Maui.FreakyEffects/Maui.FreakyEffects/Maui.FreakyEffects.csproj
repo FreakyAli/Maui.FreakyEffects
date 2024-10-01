@@ -46,7 +46,7 @@
 		<CreatePackage>false</CreatePackage>
 	</PropertyGroup>
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net8.0-ios|AnyCPU'">
-	  <CreatePackage>false</CreatePackage>
+		<CreatePackage>false</CreatePackage>
 	</PropertyGroup>
 	<ItemGroup>
 		<None Remove="Platforms\Android\" />
@@ -64,8 +64,8 @@
 		<Folder Include="Shared\TouchEffects\" />
 	</ItemGroup>
 	<ItemGroup>
-		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.40" />
-		<PackageReference Include="Microsoft.Maui.Controls" Version="8.0.40" />
+		<PackageReference Update="Microsoft.Maui.Controls" Version="8.0.91" />
+		<PackageReference Update="Microsoft.Maui.Controls.Compatibility" Version="8.0.91" />
 		<PackageReference Include="SkiaSharp.Views.Maui.Controls" Version="2.88.8" />
 	</ItemGroup>
 </Project>
