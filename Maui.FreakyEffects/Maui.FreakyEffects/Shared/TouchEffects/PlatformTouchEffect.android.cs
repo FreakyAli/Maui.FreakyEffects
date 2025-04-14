@@ -7,12 +7,15 @@ using Android.OS;
 using Android.Views;
 using Android.Widget;
 using Microsoft.Maui.Controls.Compatibility.Platform.Android;
+using Microsoft.Maui.Controls.Compatibility;
 using Microsoft.Maui.Controls.Platform;
 using Color = Android.Graphics.Color;
 using ListView = Android.Widget.ListView;
 using ScrollView = Android.Widget.ScrollView;
 using View = Android.Views.View;
 using Rect = Android.Graphics.Rect;
+using Layout = Microsoft.Maui.Controls.Layout;
+using Microsoft.Maui.Platform;
 
 namespace Maui.FreakyEffects.TouchEffects;
 
@@ -22,7 +25,7 @@ public class TouchEffectPlatform : PlatformEffect
     public bool IsDisposed => Container == null || Container.Handle == IntPtr.Zero;
     public View View => Control ?? Container;
 
-    Color _color;
+    Android.Graphics.Color _color;
     byte _alpha;
     RippleDrawable _ripple;
     FrameLayout _viewOverlay;
@@ -98,8 +101,7 @@ public class TouchEffectPlatform : PlatformEffect
         {
             return;
         }
-
-        _color = color.ToAndroid();
+        _color = color.ToPlatform();
         _alpha = _color.A == 255 ? (byte)80 : _color.A;
 
         if (EnableRipple)
@@ -256,7 +258,12 @@ public class TouchEffectPlatform : PlatformEffect
 public class CommandsPlatform : PlatformEffect
 {
     public View View => Control ?? Container;
+#if NET8_0
     public bool IsDisposed => (Container as IVisualElementRenderer)?.Element == null;
+#endif
+#if NET9_0
+    public bool IsDisposed => Container == null;//(Container as IVisualElementRenderer)?.Element == null;
+#endif
 
     DateTime _tapTime;
     readonly Rect _rect = new Rect();

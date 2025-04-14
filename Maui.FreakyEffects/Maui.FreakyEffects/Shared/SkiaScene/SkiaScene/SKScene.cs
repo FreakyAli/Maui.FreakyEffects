@@ -17,7 +17,7 @@ public class SKScene : ISKScene
 
     public void Render(SKCanvas canvas)
     {
-        canvas.Concat(ref Matrix);
+        canvas.Concat(in Matrix);
         var center = GetCenter();
         var angleInRadians = GetAngleInRadians();
         var scale = GetScale();

@@ -1,5 +1,5 @@
 ﻿namespace Maui.FreakyEffects.Skeleton;
-
+[AcceptEmptyServiceProvider]
 public class BeatAnimation : BaseAnimation
 {
     public BeatAnimation(int interval, double? parameter)
