@@ -1,5 +1,4 @@
 using CommunityToolkit.Maui;
-using Maui.FreakyEffects;
 using Maui.FreakyControls.Extensions;
 
 namespace Samples;
@@ -19,7 +18,8 @@ public static class MauiProgram
             })
             .ConfigureEffects(effects =>
             {
-                effects.InitFreakyEffects();
+                //this is throwing an exception: An item with the same key has already been added. Key: Maui.FreakyEffects.TouchEffects.TouchRoutingEffect'
+                //effects.InitFreakyEffects();
             });
         builder.InitializeFreakyControls(useFreakyEffects: false);
         return builder.Build();

@@ -1,5 +1,5 @@
 ﻿namespace Maui.FreakyEffects.Skeleton;
-
+[AcceptEmptyServiceProvider]
 public class VerticalShakeAnimation : BaseAnimation
 {
     public VerticalShakeAnimation(int interval, double? parameter)

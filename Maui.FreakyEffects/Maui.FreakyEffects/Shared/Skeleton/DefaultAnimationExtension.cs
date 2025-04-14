@@ -1,6 +1,7 @@
 ﻿namespace Maui.FreakyEffects.Skeleton;
 
 [ContentProperty(nameof(Source))]
+[AcceptEmptyServiceProvider]
 public sealed class DefaultAnimationExtension : IMarkupExtension<BaseAnimation>
 {
     public int Interval { get; set; } = 500;
@@ -31,6 +32,5 @@ public sealed class DefaultAnimationExtension : IMarkupExtension<BaseAnimation>
         }
     }
 
-    object IMarkupExtension.ProvideValue(IServiceProvider serviceProvider) =>
-        ProvideValue(serviceProvider);
+    object IMarkupExtension.ProvideValue(IServiceProvider serviceProvider) =>ProvideValue(serviceProvider);
 }

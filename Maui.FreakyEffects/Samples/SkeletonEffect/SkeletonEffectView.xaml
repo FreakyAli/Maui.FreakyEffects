@@ -3,10 +3,10 @@
     x:Class="Samples.SkeletonEffect.SkeletonEffectView"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:freakyControls="clr-namespace:Maui.FreakyControls;assembly=Maui.FreakyControls"
     xmlns:sk="clr-namespace:Maui.FreakyEffects.Skeleton;assembly=Maui.FreakyEffects"
     xmlns:touchEffects="clr-namespace:Maui.FreakyEffects.TouchEffects;assembly=Maui.FreakyEffects"
     xmlns:views="clr-namespace:Samples"
-    xmlns:freakyControls="clr-namespace:Maui.FreakyControls;assembly=Maui.FreakyControls"
     xmlns:vm="clr-namespace:Samples.SkeletonEffect"
     x:DataType="vm:SkeletonEffectViewModel"
     BackButtonCommand="{Binding BackButtonCommand}"
@@ -14,6 +14,8 @@
     HeaderText="Profile">
     <ContentPage.Resources>
         <Style TargetType="Label">
+            <!--  If you don't define a "default" color on style definition it will fail clearing the value  -->
+            <Setter Property="BackgroundColor" Value="Transparent" />
             <Setter Property="FontFamily" Value="Segoe UI" />
             <Setter Property="LineBreakMode" Value="WordWrap" />
         </Style>
@@ -50,7 +52,8 @@
                             FontSize="Title"
                             HorizontalOptions="Center"
                             HorizontalTextAlignment="Center"
-                            Text="Gulam Ali Hakim" />
+                            Text="Gulam Ali Hakim"
+                            TextColor="Black" />
                         <Label
                             sk:SkeletonEffect.Animation="{sk:DefaultAnimation Source=Fade,
                                                                               Interval='600',

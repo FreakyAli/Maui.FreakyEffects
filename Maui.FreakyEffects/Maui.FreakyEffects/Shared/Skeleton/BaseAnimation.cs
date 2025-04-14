@@ -1,9 +1,15 @@
 ﻿namespace Maui.FreakyEffects.Skeleton;
-
+[AcceptEmptyServiceProvider]
 public abstract class BaseAnimation : IAnimation
 {
     public uint Interval { get; set; }
-    public double Parameter { get; set; }
+
+    private double? _Parameter;
+    public double Parameter
+    {
+        get => _Parameter ??= 0.6;
+        set => _Parameter = value;
+    }
 
     protected abstract Task<bool> Animate(BindableObject bindable);
     protected abstract Task StopAnimation(BindableObject bindable);
