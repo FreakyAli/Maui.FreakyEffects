@@ -3,9 +3,9 @@
 public class FadeAnimation : BaseAnimation
 {
     public FadeAnimation()
-    {
-        
+    {  
     }
+    
     public FadeAnimation(int interval, double? parameter)
     {
         this.Interval = (uint)interval;
