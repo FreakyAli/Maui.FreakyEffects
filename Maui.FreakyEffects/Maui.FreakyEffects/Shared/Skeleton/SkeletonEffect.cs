@@ -14,6 +14,7 @@ public static class SkeletonEffect
 
     public static readonly BindableProperty IsBusyProperty = BindableProperty.CreateAttached("IsBusy", typeof(bool), typeof(VisualElement), default(bool), propertyChanged: (b, oldValue, newValue) => OnIsBusyChanged(b, (bool)newValue));
 
+
     public static void SetIsBusy(BindableObject b, bool value) => b.SetValue(IsBusyProperty, value);
 
     public static bool GetIsBusy(BindableObject b) => (bool)b.GetValue(IsBusyProperty);
@@ -105,31 +106,46 @@ public static class SkeletonEffect
 
     private static void OnIsBusyChanged(BindableObject bindable, bool newValue)
     {
-        if (bindable.GetType().IsSubclassOf(typeof(VisualElement)))
+        switch (bindable)
         {
-            HandleIsBusyChanged(bindable, newValue);
+            case View view:
+                HandleIsBusyChanged(view, newValue);
+                break;
+            case Element element:
+                HandleIsBusyChanged(element, newValue);
+                break;
+            default:
+                throw new NotSupportedException();
+        }
+    }
+    private static void HandleIsBusyChanged(Element element, bool isBusyNewValue)
+    {
+        if (isBusyNewValue)
+        {
+            if (element is FontImageSource fis)
+            {
+                SetColor(fis);
+            }
         }
         else
         {
-            throw new NotSupportedException();
+            if (element is FontImageSource fis)
+            {
+                RestoreColor(fis);
+            }
         }
     }
-
-    private static void HandleIsBusyChanged(BindableObject bindable, bool isBusyNewValue)
+    private static void HandleIsBusyChanged(View view, bool isBusyNewValue)
     {
-        if (bindable is not View)
-            return;
-
-        var view = (View)bindable;
         if (isBusyNewValue)
         {
-            if (GetHide(bindable))
+            if (GetHide(view))
             {
-                ((View)bindable).IsVisible = false;
+                ((View)view).IsVisible = false;
             }
             else
             {
-                if (view is Layout layout && !GetIsParent(bindable))
+                if (view is Layout layout && !GetIsParent(view))
                 {
                     SetLayoutChilds(layout);
                 }
@@ -145,9 +161,9 @@ public static class SkeletonEffect
         }
         else
         {
-            if (GetHide(bindable))
+            if (GetHide(view))
             {
-                ((View)bindable).IsVisible = true;
+                ((View)view).IsVisible = true;
             }
             else
             {
@@ -155,7 +171,7 @@ public static class SkeletonEffect
 
                 RestoreBackgroundColor(view);
 
-                if (view is Layout layout && !GetIsParent(bindable))
+                if (view is Layout layout && !GetIsParent(view))
                 {
                     RestoreLayoutChilds(layout);
                 }
@@ -187,10 +203,22 @@ public static class SkeletonEffect
     {
         var hasDynamic = GetUseDynamicBackgroundColor(view)
             || view.HasDynamicColorOnProperty(VisualElement.BackgroundColorProperty);
-        SetOriginalBackgroundColor(view, view.BackgroundColor);
+
+        Color originalColor = null;
+        if (view.Background is SolidColorBrush color)
+        {
+            originalColor = color.Color;
+        }
+        else if (view.Background is not null)
+        {
+            originalColor = view.BackgroundColor;
+        }
+
+        SetOriginalBackgroundColor(view, originalColor);
         var backgroundColor = GetBackgroundColor(view);
         if (backgroundColor != default(Color))
         {
+            view.Background =
             view.BackgroundColor = backgroundColor;
         }
 
@@ -209,12 +237,37 @@ public static class SkeletonEffect
         {
             if (GetOriginalBackgroundColor(view) is { } originalColor)
             {
+                view.Background =
                 view.BackgroundColor = originalColor;
             }
             else
             {
                 view.ClearValue(VisualElement.BackgroundColorProperty);
             }
+        }
+    }
+
+    private static void SetColor(FontImageSource view)
+    {
+        Color originalColor = view.Color;
+        SetOriginalBackgroundColor(view, originalColor);
+        var backgroundColor = GetBackgroundColor(view);
+        if (backgroundColor != default(Color))
+        {
+            view.Color = backgroundColor;
+        }
+        SetUseDynamicBackgroundColor(view, false);
+    }
+
+    private static void RestoreColor(FontImageSource view)
+    {
+        if (GetOriginalBackgroundColor(view) is { } originalColor)
+        {
+            view.Color = originalColor;
+        }
+        else
+        {
+            view.ClearValue(FontImageSource.ColorProperty);
         }
     }
 
@@ -276,10 +329,17 @@ public static class SkeletonEffect
 
     private static void RunAnimation(View view)
     {
+        if (GetAnimating(view))
+        {
+            return;
+        }
         var animation = GetAnimation(view);
 
-        if (animation == null || GetAnimating(view))
-            return;
+        if (animation == null)
+        {
+            animation = new FadeAnimation();
+            SetAnimation(view, animation);
+        }
 
         SetCancelAnimation(view, false);
 
