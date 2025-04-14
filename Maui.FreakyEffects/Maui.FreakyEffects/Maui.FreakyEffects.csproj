@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
+		<!--Net8-->
 		<TargetFrameworks>net8.0;net8.0-android;net8.0-ios;net8.0-maccatalyst</TargetFrameworks>
 		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net8.0-windows10.0.19041.0</TargetFrameworks>
+		<!--Net9-->
+		<TargetFrameworks>$(TargetFrameworks);net9.0;net9.0-android;net9.0-ios;net9.0-maccatalyst</TargetFrameworks>
+		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net9.0-windows10.0.19041.0</TargetFrameworks>
 		<UseMaui>true</UseMaui>
+		<SkipValidateMauiImplicitPackageReferences>true</SkipValidateMauiImplicitPackageReferences>
 		<SingleProject>true</SingleProject>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">14.0</SupportedOSPlatformVersion>
@@ -64,8 +69,8 @@
 		<Folder Include="Shared\TouchEffects\" />
 	</ItemGroup>
 	<ItemGroup>
-		<PackageReference Update="Microsoft.Maui.Controls" Version="8.0.91" />
-		<PackageReference Update="Microsoft.Maui.Controls.Compatibility" Version="8.0.91" />
-		<PackageReference Include="SkiaSharp.Views.Maui.Controls" Version="2.88.8" />
+		<PackageReference Update="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
+		<PackageReference Update="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
+		<PackageReference Include="SkiaSharp.Views.Maui.Controls" Version="3.116.1" />
 	</ItemGroup>
 </Project>
