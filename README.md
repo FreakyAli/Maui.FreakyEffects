@@ -8,17 +8,17 @@
 </div>
 
 
-Maui.FreakyEffects is a collection of lightweight, visually stunning and unique effects for Maui, it contains a variety of effects that you can use to add some creativity to your Maui applications.
+Maui.FreakyEffects is a collection of lightweight, visually stunning and unique effects for Maui, It contains a variety of effects that you can use to add some creativity to your Maui applications.
 
 The code for each effect is well-documented and easy to understand, making it accessible for both experienced Maui developers and those just starting out.
 
-If you're looking to add some unique visual effects to your Maui applications be sure to check us out!
+If you want to add some unique visual effects to your Maui applications, be sure to check us out!
 
 ## Platforms
 
 | Support       | OS            |
 | ------------- |:-------------:|
-| iOS             | iOS 11.0 + |
+| iOS             | iOS 15.0 + |
 | Android    | API 23+ (Marshmallow) | 
 
 ## Previews:
@@ -34,15 +34,15 @@ Skeleton Effect's Profile Design Inspired from [here](https://www.behance.net/ga
 
 Add our [NuGet](https://www.nuget.org/packages/FreakyEffects) package or
 
-Run the following command to add nuget to your .Net MAUI app:
+Run the following command to add NuGet to your .NET MAUI app:
 
       Install-Package FreakyEffects -Version xx.xx.xx
 
-Checkout the installation page on our [Wiki](https://github.com/FreakyAli/Maui.FreakyEffects/wiki) for more information.
+You can check out the installation page on our [Wiki](https://github.com/FreakyAli/Maui.FreakyEffects/wiki) for more information.
 
 ## Documentation
  
-For more details and API documentation check our [Installation Wiki](https://github.com/FreakyAli/Maui.FreakyEffects/wiki/Installation)
+For more details and API documentation, check our [Installation Wiki](https://github.com/FreakyAli/Maui.FreakyEffects/wiki/Installation)
 
 ### Like what you saw? Want to keep this repo alive?
 [![](https://miro.medium.com/max/600/0*wrBJU05A3BULKcWA.gif)](https://www.buymeacoffee.com/FreakyAli)
