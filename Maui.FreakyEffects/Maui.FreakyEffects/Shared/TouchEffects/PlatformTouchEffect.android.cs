@@ -8,6 +8,7 @@ using Android.Views;
 using Android.Widget;
 using Microsoft.Maui.Controls.Compatibility.Platform.Android;
 using Microsoft.Maui.Controls.Platform;
+using Microsoft.Maui.Platform;
 using Color = Android.Graphics.Color;
 using ListView = Android.Widget.ListView;
 using ScrollView = Android.Widget.ScrollView;
@@ -99,7 +100,7 @@ public class TouchEffectPlatform : PlatformEffect
             return;
         }
 
-        _color = color.ToAndroid();
+        _color = color.ToPlatform();
         _alpha = _color.A == 255 ? (byte)80 : _color.A;
 
         if (EnableRipple)
@@ -256,7 +257,7 @@ public class TouchEffectPlatform : PlatformEffect
 public class CommandsPlatform : PlatformEffect
 {
     public View View => Control ?? Container;
-    public bool IsDisposed => (Container as IVisualElementRenderer)?.Element == null;
+    public bool IsDisposed => (Container == null || Container.Handle == IntPtr.Zero);
 
     DateTime _tapTime;
     readonly Rect _rect = new Rect();
