@@ -9,14 +9,11 @@
 </div>
 
 
-Maui.FreakyEffects is a collection of lightweight, visually stunning and unique effects for Maui, It contains a variety of effects that you can use to add some creativity to your Maui applications.
+Maui.FreakyEffects is a collection of lightweight, visually stunning and unique effects for Maui. It contains a variety of effects that you can use to add some creativity to your Maui applications.
 
 The code for each effect is well-documented and easy to understand, making it accessible for both experienced Maui developers and those just starting out.
 
 If you want to add some unique visual effects to your Maui applications, be sure to check us out!
-
-
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FFreakyAli%2FMaui.FreakyEffects.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FFreakyAli%2FMaui.FreakyEffects?ref=badge_large)
 
 ## Platforms
 
@@ -56,6 +53,10 @@ For more details and API documentation, check our [Installation Wiki](https://gi
 The license for this project can be found [here](https://github.com/FreakyAli/Maui.FreakyEffects/blob/master/LICENSE)
 
 ## Activity 
+
+Fossa: 
+
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FFreakyAli%2FMaui.FreakyEffects.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FFreakyAli%2FMaui.FreakyEffects?ref=badge_large)
 
 Sparkline: 
 
