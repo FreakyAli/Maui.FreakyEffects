@@ -3,12 +3,13 @@
 <div>
    <a href="https://www.nuget.org/packages/FreakyEffects"><img src="https://img.shields.io/nuget/v/FreakyEffects?color=blue&logo=nuget"></a>
    <a href="https://www.nuget.org/packages/FreakyEffects"><img src="https://img.shields.io/nuget/dt/FreakyEffects.svg"></a>
+<a href="https://app.fossa.com/projects/git%2Bgithub.com%2FFreakyAli%2FMaui.FreakyEffects?ref=badge_shield" alt="FOSSA Status"><img src="https://app.fossa.com/api/projects/git%2Bgithub.com%2FFreakyAli%2FMaui.FreakyEffects.svg?type=shield"/></a>
    <a href="./LICENSE"><img src="https://img.shields.io/github/license/freakyali/maui.freakyeffects"></a>
    <a href="https://www.codefactor.io/repository/github/freakyali/maui.freakyeffects"><img src="https://www.codefactor.io/repository/github/freakyali/maui.freakyeffects/badge"></a>
 </div>
 
 
-Maui.FreakyEffects is a collection of lightweight, visually stunning and unique effects for Maui, It contains a variety of effects that you can use to add some creativity to your Maui applications.
+Maui.FreakyEffects is a collection of lightweight, visually stunning and unique effects for Maui. It contains a variety of effects that you can use to add some creativity to your Maui applications.
 
 The code for each effect is well-documented and easy to understand, making it accessible for both experienced Maui developers and those just starting out.
 
@@ -52,6 +53,10 @@ For more details and API documentation, check our [Installation Wiki](https://gi
 The license for this project can be found [here](https://github.com/FreakyAli/Maui.FreakyEffects/blob/master/LICENSE)
 
 ## Activity 
+
+Fossa: 
+
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FFreakyAli%2FMaui.FreakyEffects.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FFreakyAli%2FMaui.FreakyEffects?ref=badge_large)
 
 Sparkline: 
 
