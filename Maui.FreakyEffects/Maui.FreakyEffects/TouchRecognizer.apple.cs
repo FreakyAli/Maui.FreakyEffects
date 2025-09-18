@@ -3,7 +3,7 @@ using Foundation;
 using Maui.FreakyEffects.TouchTracking;
 using UIKit;
 
-namespace Maui.FreakyEffects.Platforms.iOS;
+namespace Maui.FreakyEffects.Platforms.Apple;
 
 class TouchRecognizer : UIGestureRecognizer
 {

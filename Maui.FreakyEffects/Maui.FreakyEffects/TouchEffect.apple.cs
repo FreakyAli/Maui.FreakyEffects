@@ -1,7 +1,7 @@
 ﻿using Maui.FreakyEffects.TouchTracking;
 using UIKit;
 
-namespace Maui.FreakyEffects.Platforms.iOS;
+namespace Maui.FreakyEffects.Platforms.Apple;
 
 public class TouchEffect : Microsoft.Maui.Controls.Platform.PlatformEffect
 {
