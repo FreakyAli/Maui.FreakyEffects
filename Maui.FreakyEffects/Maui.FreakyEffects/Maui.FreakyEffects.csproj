@@ -76,6 +76,7 @@
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Maui.Controls" Version="9.0.0" />
 		<PackageReference Include="SkiaSharp.Views.Maui.Controls" Version="3.119.0" />
+		<PackageReference Include="SkiaSharp.HarfBuzz" Version="3.119.0" />
 		<PackageReference Include="FreakyKit.Utils" Version="1.0.1" />
 	</ItemGroup>
 </Project>
