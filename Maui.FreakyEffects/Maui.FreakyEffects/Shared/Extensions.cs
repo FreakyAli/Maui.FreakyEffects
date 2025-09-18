@@ -3,10 +3,8 @@ using TouchEffect = Maui.FreakyEffects.TouchTracking.TouchEffect;
 
 #if ANDROID
 using PlatformTouchEffects = Maui.FreakyEffects.Platforms.Android.TouchEffect;
-#elif IOS
+#elif IOS || MACCATALYST
 using PlatformTouchEffects = Maui.FreakyEffects.Platforms.Apple.TouchEffect;
-#elif MACCATALYST
-using Maui.FreakyEffects.Platforms.MacCatalyst;
 #elif WINDOWS
 using Maui.FreakyEffects.Platforms.Windows;
 #else
