@@ -5,8 +5,8 @@ public struct TouchTrackingRect
     public TouchTrackingRect(float left, float top, float right, float bottom) : this()
     {
         Left = left;
-        Right = top;
-        Top = right;
+        Top = top;
+        Right = right;
         Bottom = bottom;
     }
 
