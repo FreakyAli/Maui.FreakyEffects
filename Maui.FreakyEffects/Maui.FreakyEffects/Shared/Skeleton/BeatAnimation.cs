@@ -11,14 +11,14 @@ public class BeatAnimation : BaseAnimation
     protected override async Task<bool> Animate(BindableObject bindable)
     {
         var self = (View)bindable;
-        await self.ScaleTo(this.Parameter, this.Interval);
-        await self.ScaleTo(1, this.Interval);
+        await self.ScaleToAsync(this.Parameter, this.Interval);
+        await self.ScaleToAsync(1, this.Interval);
         return true;
     }
 
     protected override async Task StopAnimation(BindableObject bindable)
     {
         var self = (View)bindable;
-        await self.ScaleTo(1, 100);
+        await self.ScaleToAsync(1, 100);
     }
 }

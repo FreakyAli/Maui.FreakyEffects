@@ -11,14 +11,14 @@ public class HorizontalShakeAnimation : BaseAnimation
     protected override async Task<bool> Animate(BindableObject bindable)
     {
         var self = (View)bindable;
-        await self.TranslateTo(this.Parameter, 0, this.Interval);
-        await self.TranslateTo(-this.Parameter, 0, this.Interval);
+        await self.TranslateToAsync(this.Parameter, 0, this.Interval);
+        await self.TranslateToAsync(-this.Parameter, 0, this.Interval);
         return true;
     }
 
     protected override async Task StopAnimation(BindableObject bindable)
     {
         if (bindable is View self)
-            await self.TranslateTo(0, 0, 100);
+            await self.TranslateToAsync(0, 0, 100);
     }
 }
