@@ -11,14 +11,14 @@ public class VerticalShakeAnimation : BaseAnimation
     protected override async Task<bool> Animate(BindableObject bindable)
     {
         var self = (View)bindable;
-        await self.TranslateTo(0, this.Parameter, this.Interval);
-        await self.TranslateTo(0, -this.Parameter, this.Interval);
+        await self.TranslateToAsync(0, this.Parameter, this.Interval);
+        await self.TranslateToAsync(0, -this.Parameter, this.Interval);
         return true;
     }
 
     protected override async Task StopAnimation(BindableObject bindable)
     {
         if (bindable is View self)
-            await self.TranslateTo(0, 0, 100);
+            await self.TranslateToAsync(0, 0, 100);
     }
 }

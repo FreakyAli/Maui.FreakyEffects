@@ -11,14 +11,14 @@ public class FadeAnimation : BaseAnimation
     protected override async Task<bool> Animate(BindableObject bindable)
     {
         var self = (View)bindable;
-        await self.FadeTo(this.Parameter, this.Interval);
-        await self.FadeTo(1, this.Interval);
+        await self.FadeToAsync(this.Parameter, this.Interval);
+        await self.FadeToAsync(1, this.Interval);
         return true;
     }
 
     protected override async Task StopAnimation(BindableObject bindable)
     {
         var self = (View)bindable;
-        await self.FadeTo(1, 100);
+        await self.FadeToAsync(1, 100);
     }
 }
