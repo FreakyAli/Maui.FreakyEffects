@@ -8,6 +8,9 @@ using Microsoft.UI.Xaml.Input;
 using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Media.Animation;
 using Microsoft.UI.Xaml.Shapes;
+using HorizontalAlignment = Microsoft.UI.Xaml.HorizontalAlignment;
+using VerticalAlignment = Microsoft.UI.Xaml.VerticalAlignment;
+using SolidColorBrush = Microsoft.UI.Xaml.Media.SolidColorBrush;
 
 namespace Maui.FreakyEffects.Platforms.Windows;
 
