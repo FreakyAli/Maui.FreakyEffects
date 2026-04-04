@@ -8,21 +8,29 @@
    <a href="https://www.codefactor.io/repository/github/freakyali/maui.freakyeffects"><img src="https://www.codefactor.io/repository/github/freakyali/maui.freakyeffects/badge"></a>
 </div>
 
+Maui.FreakyEffects is a collection of lightweight, visually stunning, and unique effects for .NET MAUI. It contains a variety of effects that you can use to add creativity and polish to your applications across all platforms.
 
-Maui.FreakyEffects is a collection of lightweight, visually stunning and unique effects for Maui. It contains a variety of effects that you can use to add some creativity to your Maui applications.
-
-The code for each effect is well-documented and easy to understand, making it accessible for both experienced Maui developers and those just starting out.
-
-If you want to add some unique visual effects to your Maui applications, be sure to check us out!
+The code for each effect is well-documented and easy to understand, making it accessible for both experienced MAUI developers and those just starting out.
 
 ## Platforms
 
-| Support       | OS            |
-| ------------- |:-------------:|
-| iOS             | iOS 15.0 + |
-| Android    | API 23+ (Marshmallow) | 
+| Platform | Version | Status |
+| --- | --- | --- |
+| iOS | 15.0+ | Full support |
+| Android | API 23+ (Marshmallow) | Full support |
+| macOS Catalyst | 15.0+ | Full support |
+| Windows | 10.0.17763+ (1809) | Full support |
 
-## Previews:
+## Effects
+
+| Effect | Description | Platforms |
+| --- | --- | --- |
+| [Skeleton Effect](docs/skeleton-effect.md) | Animated loading placeholders with Beat, Fade, and Shake animations | All |
+| [Touch Effects](docs/touch-effects.md) | Visual ripple/highlight on touch with configurable color and tap/long-tap commands | All |
+| [Touch Tracking](docs/touch-tracking.md) | Low-level multi-touch point tracking with Pressed, Moved, Released, Entered, Exited, and Cancelled events | All |
+| [SkiaScene](docs/skia-scene.md) | Hardware-accelerated 2D scene with pinch-to-zoom, pan, tap, and double-tap gesture recognition | All |
+
+## Previews
 
 | iOS | Android |
 | --- | --- |
@@ -33,32 +41,49 @@ Skeleton Effect's Profile Design Inspired from [here](https://www.behance.net/ga
 
 ## Installation
 
-Add our [NuGet](https://www.nuget.org/packages/FreakyEffects) package or
+Add our [NuGet](https://www.nuget.org/packages/FreakyEffects) package or run the following command in your .NET MAUI project:
 
-Run the following command to add NuGet to your .NET MAUI app:
+```
+Install-Package FreakyEffects -Version xx.xx.xx
+```
 
-      Install-Package FreakyEffects -Version xx.xx.xx
+Then register the effects in your `MauiProgram.cs`:
 
-You can check out the installation page on our [Wiki](https://github.com/FreakyAli/Maui.FreakyEffects/wiki) for more information.
+```csharp
+builder
+    .UseMauiApp<App>()
+    .ConfigureEffects(effects =>
+    {
+        effects.InitFreakyEffects();
+    });
+```
 
 ## Documentation
- 
-For more details and API documentation, check our [Installation Wiki](https://github.com/FreakyAli/Maui.FreakyEffects/wiki/Installation)
+
+Full documentation lives in the [docs/](docs/) folder:
+
+- [Getting Started](docs/getting-started.md)
+- [Skeleton Effect](docs/skeleton-effect.md)
+- [Touch Effects](docs/touch-effects.md)
+- [Touch Tracking](docs/touch-tracking.md)
+- [SkiaScene](docs/skia-scene.md)
+
+You can also check the [Wiki](https://github.com/FreakyAli/Maui.FreakyEffects/wiki) for additional information.
 
 ### Like what you saw? Want to keep this repo alive?
 [![](https://miro.medium.com/max/600/0*wrBJU05A3BULKcWA.gif)](https://www.buymeacoffee.com/FreakyAli)
 
-## License 
+## License
 
 The license for this project can be found [here](https://github.com/FreakyAli/Maui.FreakyEffects/blob/master/LICENSE)
 
-## Activity 
+## Activity
 
-Fossa: 
+Fossa:
 
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FFreakyAli%2FMaui.FreakyEffects.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FFreakyAli%2FMaui.FreakyEffects?ref=badge_large)
 
-Sparkline: 
+Sparkline:
 
 [![Sparkline](https://stars.medv.io/FreakyAli/Maui.FreakyEffects.svg)](https://stars.medv.io/FreakyAli/Maui.FreakyEffects)
 

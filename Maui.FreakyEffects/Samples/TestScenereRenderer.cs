@@ -17,7 +17,7 @@ public class TestScenereRenderer : ISKSceneRenderer
             paint.IsAntialias = true;
             paint.Color = new SKColor(0x2c, 0x3e, 0x50);
             paint.StrokeCap = SKStrokeCap.Round;
-            canvas.DrawRect(new SKRect(0, 0, 1080, 1800), new SKPaint { Color = new SKColor(255, 10, 10) });
+            canvas.DrawRect(canvas.LocalClipBounds, new SKPaint { Color = new SKColor(255, 10, 10) });
             for (int i = 1; i <= columns; i++)
             {
                 for (int y = 1; y <= rows; y++)
