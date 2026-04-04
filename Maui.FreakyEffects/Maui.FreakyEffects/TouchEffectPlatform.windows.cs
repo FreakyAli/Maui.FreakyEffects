@@ -57,6 +57,9 @@ internal class TouchEffectPlatform : PlatformEffect
         _view.PointerCaptureLost -= OnPointerCaptureLost;
         _view.PointerExited -= OnPointerExited;
 
+        _fadeStoryboard?.Stop();
+        _fadeStoryboard = null;
+
         if (Container is Panel panel && _overlay != null)
             panel.Children.Remove(_overlay);
 
