@@ -1,7 +1,10 @@
 #if WINDOWS
+using System.Collections.Concurrent;
 using Maui.FreakyEffects.TouchTracking;
 using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Input;
+using Microsoft.UI.Xaml.Media;
 
 namespace Maui.FreakyEffects.Platforms.Windows;
 
@@ -9,8 +12,8 @@ public class TouchHandler : TouchHandlerBase<FrameworkElement>
 {
     private FrameworkElement _element;
 
-    private static Dictionary<FrameworkElement, TouchHandler> _viewDictionary = new();
-    private static Dictionary<uint, TouchHandler> _idToHandlerDictionary = new();
+    private static readonly ConcurrentDictionary<FrameworkElement, TouchHandler> _viewDictionary = new();
+    private static readonly ConcurrentDictionary<uint, TouchHandler> _idToHandlerDictionary = new();
 
     public override void RegisterEvents(FrameworkElement element)
     {
@@ -26,7 +29,16 @@ public class TouchHandler : TouchHandlerBase<FrameworkElement>
 
     public override void UnregisterEvents(FrameworkElement element)
     {
-        _viewDictionary.Remove(element);
+        _viewDictionary.TryRemove(element, out _);
+
+        // Remove any active pointer IDs that were tracking this handler to prevent leaks
+        foreach (var key in _idToHandlerDictionary.Keys)
+        {
+            if (_idToHandlerDictionary.TryGetValue(key, out var handler) && handler == this)
+                _idToHandlerDictionary.TryRemove(key, out _);
+        }
+
+        _element = null;
 
         element.PointerPressed -= OnPointerPressed;
         element.PointerMoved -= OnPointerMoved;
@@ -44,8 +56,7 @@ public class TouchHandler : TouchHandlerBase<FrameworkElement>
 
         FireEvent(this, id, TouchActionType.Pressed, location, true);
 
-        if (!_idToHandlerDictionary.ContainsKey(id))
-            _idToHandlerDictionary[id] = this;
+        _idToHandlerDictionary.TryAdd(id, this);
 
         if (Capture)
             element.CapturePointer(e.Pointer);
@@ -98,7 +109,7 @@ public class TouchHandler : TouchHandlerBase<FrameworkElement>
             }
         }
 
-        _idToHandlerDictionary.Remove(id);
+        _idToHandlerDictionary.TryRemove(id, out _);
     }
 
     private void OnPointerCanceled(object sender, PointerRoutedEventArgs e) =>
@@ -116,22 +127,24 @@ public class TouchHandler : TouchHandlerBase<FrameworkElement>
         if (_idToHandlerDictionary.TryGetValue(id, out var handler) && handler != null)
             FireEvent(handler, id, TouchActionType.Cancelled, location, false);
 
-        _idToHandlerDictionary.Remove(id);
+        _idToHandlerDictionary.TryRemove(id, out _);
     }
 
     private void CheckForBoundaryHop(PointerRoutedEventArgs e, uint id)
     {
-        TouchHandler hitHandler = null;
-
-        foreach (var kvp in _viewDictionary)
-        {
-            var view = kvp.Key;
-            var point = e.GetCurrentPoint(view);
-            var bounds = new global::Windows.Foundation.Rect(0, 0, view.ActualWidth, view.ActualHeight);
-
-            if (bounds.Contains(point.Position))
-                hitHandler = kvp.Value;
-        }
+        // Collect all tracked views that contain the pointer, then pick the topmost
+        // by Z-index (highest first) with visual-tree depth as a tiebreaker.
+        TouchHandler hitHandler = _viewDictionary
+            .Where(kvp =>
+            {
+                var point = e.GetCurrentPoint(kvp.Key);
+                var bounds = new global::Windows.Foundation.Rect(0, 0, kvp.Key.ActualWidth, kvp.Key.ActualHeight);
+                return bounds.Contains(point.Position);
+            })
+            .OrderByDescending(kvp => Canvas.GetZIndex(kvp.Key))
+            .ThenByDescending(kvp => GetVisualDepth(kvp.Key))
+            .Select(kvp => kvp.Value)
+            .FirstOrDefault();
 
         _idToHandlerDictionary.TryGetValue(id, out var currentHandler);
 
@@ -160,6 +173,18 @@ public class TouchHandler : TouchHandlerBase<FrameworkElement>
     {
         OnTouchAction(handler._element,
             new TouchActionEventArgs(id, actionType, location, isInContact));
+    }
+
+    private static int GetVisualDepth(DependencyObject element)
+    {
+        int depth = 0;
+        var current = VisualTreeHelper.GetParent(element);
+        while (current != null)
+        {
+            depth++;
+            current = VisualTreeHelper.GetParent(current);
+        }
+        return depth;
     }
 }
 #endif

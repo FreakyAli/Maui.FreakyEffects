@@ -19,6 +19,7 @@ internal class TouchEffectPlatform : PlatformEffect
     private FrameworkElement _view;
     private Rectangle _overlay;
     private bool _isPressed;
+    private Storyboard _fadeStoryboard;
 
     protected override void OnAttached()
     {
@@ -72,9 +73,15 @@ internal class TouchEffectPlatform : PlatformEffect
 
     private void UpdateEffectColor()
     {
-        var color = TouchEffects.TouchEffect.GetColor(Element);
-        if (color == Colors.Transparent || _overlay == null)
+        if (_overlay == null)
             return;
+
+        var color = TouchEffects.TouchEffect.GetColor(Element);
+        if (color == Colors.Transparent)
+        {
+            _overlay.Fill = null;
+            return;
+        }
 
         var alpha = color.Alpha < 1.0f ? color.Alpha : 0.3f;
         var winColor = global::Windows.UI.Color.FromArgb(
@@ -90,6 +97,8 @@ internal class TouchEffectPlatform : PlatformEffect
     {
         if (_overlay == null) return;
         _isPressed = true;
+        _fadeStoryboard?.Stop();
+        _fadeStoryboard = null;
         _overlay.Opacity = 1;
     }
 
@@ -107,6 +116,8 @@ internal class TouchEffectPlatform : PlatformEffect
     private void CancelEffect()
     {
         _isPressed = false;
+        _fadeStoryboard?.Stop();
+        _fadeStoryboard = null;
         if (_overlay != null)
             _overlay.Opacity = 0;
     }
@@ -126,9 +137,10 @@ internal class TouchEffectPlatform : PlatformEffect
         Storyboard.SetTarget(animation, _overlay);
         Storyboard.SetTargetProperty(animation, "Opacity");
 
-        var storyboard = new Storyboard();
-        storyboard.Children.Add(animation);
-        storyboard.Begin();
+        _fadeStoryboard?.Stop();
+        _fadeStoryboard = new Storyboard();
+        _fadeStoryboard.Children.Add(animation);
+        _fadeStoryboard.Begin();
     }
 }
 #endif
