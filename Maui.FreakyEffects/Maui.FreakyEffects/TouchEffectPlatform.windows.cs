@@ -18,7 +18,7 @@ internal class TouchEffectPlatform : PlatformEffect
 {
     private FrameworkElement _view;
     private Rectangle _overlay;
-    private bool _isPressed;
+    private readonly HashSet<uint> _activePointerIds = new();
     private Storyboard _fadeStoryboard;
 
     protected override void OnAttached()
@@ -96,26 +96,42 @@ internal class TouchEffectPlatform : PlatformEffect
     private void OnPointerPressed(object sender, PointerRoutedEventArgs e)
     {
         if (_overlay == null) return;
-        _isPressed = true;
-        _fadeStoryboard?.Stop();
-        _fadeStoryboard = null;
-        _overlay.Opacity = 1;
+        var id = e.GetCurrentPoint(_view).PointerId;
+        if (_activePointerIds.Add(id) && _activePointerIds.Count == 1)
+        {
+            _fadeStoryboard?.Stop();
+            _fadeStoryboard = null;
+            _overlay.Opacity = 1;
+        }
     }
 
     private void OnPointerReleased(object sender, PointerRoutedEventArgs e)
     {
-        if (!_isPressed) return;
-        _isPressed = false;
-        AnimateFadeOut();
+        var id = e.GetCurrentPoint(_view).PointerId;
+        _activePointerIds.Remove(id);
+        if (_activePointerIds.Count == 0)
+            AnimateFadeOut();
     }
 
-    private void OnPointerCanceled(object sender, PointerRoutedEventArgs e) => CancelEffect();
-    private void OnPointerCaptureLost(object sender, PointerRoutedEventArgs e) => CancelEffect();
-    private void OnPointerExited(object sender, PointerRoutedEventArgs e) => CancelEffect();
+    private void OnPointerCanceled(object sender, PointerRoutedEventArgs e) =>
+        CancelPointer(e.GetCurrentPoint(_view).PointerId);
+
+    private void OnPointerCaptureLost(object sender, PointerRoutedEventArgs e) =>
+        CancelPointer(e.GetCurrentPoint(_view).PointerId);
+
+    private void OnPointerExited(object sender, PointerRoutedEventArgs e) =>
+        CancelPointer(e.GetCurrentPoint(_view).PointerId);
+
+    private void CancelPointer(uint id)
+    {
+        _activePointerIds.Remove(id);
+        if (_activePointerIds.Count == 0)
+            CancelEffect();
+    }
 
     private void CancelEffect()
     {
-        _isPressed = false;
+        _activePointerIds.Clear();
         _fadeStoryboard?.Stop();
         _fadeStoryboard = null;
         if (_overlay != null)

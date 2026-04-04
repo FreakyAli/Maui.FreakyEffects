@@ -56,7 +56,7 @@ public class TouchHandler : TouchHandlerBase<FrameworkElement>
 
         FireEvent(this, id, TouchActionType.Pressed, location, true);
 
-        _idToHandlerDictionary.TryAdd(id, this);
+        _idToHandlerDictionary[id] = this;
 
         if (Capture)
             element.CapturePointer(e.Pointer);
@@ -69,6 +69,8 @@ public class TouchHandler : TouchHandlerBase<FrameworkElement>
 
         if (Capture)
         {
+            if (!_idToHandlerDictionary.ContainsKey(id))
+                return;
             var point = e.GetCurrentPoint(element);
             var location = new TouchTrackingPoint((float)point.Position.X, (float)point.Position.Y);
             FireEvent(this, id, TouchActionType.Moved, location, true);
@@ -93,6 +95,11 @@ public class TouchHandler : TouchHandlerBase<FrameworkElement>
 
         if (Capture)
         {
+            if (!_idToHandlerDictionary.TryGetValue(id, out var owner) || owner != this)
+            {
+                _idToHandlerDictionary.TryRemove(id, out _);
+                return;
+            }
             var point = e.GetCurrentPoint(element);
             var location = new TouchTrackingPoint((float)point.Position.X, (float)point.Position.Y);
             FireEvent(this, id, TouchActionType.Released, location, false);
@@ -124,9 +131,13 @@ public class TouchHandler : TouchHandlerBase<FrameworkElement>
         uint id = point.PointerId;
         var location = new TouchTrackingPoint((float)point.Position.X, (float)point.Position.Y);
 
-        if (_idToHandlerDictionary.TryGetValue(id, out var handler) && handler != null)
-            FireEvent(handler, id, TouchActionType.Cancelled, location, false);
+        if (!_idToHandlerDictionary.TryGetValue(id, out var handler) || handler != this)
+        {
+            _idToHandlerDictionary.TryRemove(id, out _);
+            return;
+        }
 
+        FireEvent(this, id, TouchActionType.Cancelled, location, false);
         _idToHandlerDictionary.TryRemove(id, out _);
     }
 
@@ -171,7 +182,7 @@ public class TouchHandler : TouchHandlerBase<FrameworkElement>
     private void FireEvent(TouchHandler handler, uint id, TouchActionType actionType,
         TouchTrackingPoint location, bool isInContact)
     {
-        OnTouchAction(handler._element,
+        handler.OnTouchAction(handler._element,
             new TouchActionEventArgs(id, actionType, location, isInContact));
     }
 
