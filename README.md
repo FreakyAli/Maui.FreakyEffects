@@ -6,7 +6,6 @@
 
 <a href="https://www.nuget.org/packages/FreakyEffects"><img src="https://img.shields.io/nuget/v/FreakyEffects?color=blue&logo=nuget&style=for-the-badge"></a>
 <a href="https://www.nuget.org/packages/FreakyEffects"><img src="https://img.shields.io/nuget/dt/FreakyEffects?style=for-the-badge"></a>
-<a href="https://app.fossa.com/projects/git%2Bgithub.com%2FFreakyAli%2FMaui.FreakyEffects?ref=badge_shield"><img src="https://app.fossa.com/api/projects/git%2Bgithub.com%2FFreakyAli%2FMaui.FreakyEffects.svg?type=shield&style=for-the-badge"/></a>
 <a href="./LICENSE"><img src="https://img.shields.io/github/license/freakyali/maui.freakyeffects?style=for-the-badge"></a>
 <a href="https://www.codefactor.io/repository/github/freakyali/maui.freakyeffects"><img src="https://img.shields.io/codefactor/grade/github/freakyali/maui.freakyeffects?style=for-the-badge"></a>
 
