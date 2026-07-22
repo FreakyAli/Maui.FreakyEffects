@@ -77,6 +77,12 @@ public static class SkeletonEffect
     internal static void SetOriginalTextColor(BindableObject b, Color value) => b.SetValue(OriginalTextColorProperty, value);
 
     internal static Color GetOriginalTextColor(BindableObject b) => (Color)b.GetValue(OriginalTextColorProperty);
+    
+    internal static readonly BindableProperty IsSkeletonAppliedProperty = BindableProperty.CreateAttached("IsSkeletonApplied", typeof(bool), typeof(View), default(bool));
+
+    internal static void SetIsSkeletonApplied(BindableObject b, bool value) => b.SetValue(IsSkeletonAppliedProperty, value);
+
+    internal static bool GetIsSkeletonApplied(BindableObject b) => (bool)b.GetValue(IsSkeletonAppliedProperty);
 
     #endregion Internal Properties
 
@@ -121,9 +127,19 @@ public static class SkeletonEffect
 
                 RunAnimation(view);
             }
+            
+            SetIsSkeletonApplied(bindable, true);
         }
         else
         {
+            // Nothing was ever applied (e.g. this runs during XAML initialization, 
+            // before IsBusy has been bound), so there are no original values to restore.
+            // Restoring here would overwrite the views own colors with null.
+            if (!GetIsSkeletonApplied(bindable))
+            {
+                return;
+            }
+            
             if (GetHide(bindable))
             {
                 ((View)bindable).IsVisible = true;
@@ -143,6 +159,8 @@ public static class SkeletonEffect
                     RestoreTextColor(view);
                 }
             }
+            
+            SetIsSkeletonApplied(bindable, false);
         }
     }
 
